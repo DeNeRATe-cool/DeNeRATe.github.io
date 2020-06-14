@@ -1,113 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2020.06.07</title>
-    <url>/alanjimmy.github.io/2020/06/14/2020-06-07/</url>
-    <content><![CDATA[<h2 id="题一：答题比赛"><a href="#题一：答题比赛" class="headerlink" title="题一：答题比赛"></a>题一：答题比赛</h2><p><strong>【问题描述】</strong></p>
-<p>$YYH$报名参加了一个特殊的电视问答节目。这个节目共有$n$个问题，每回答正确$1$题，$YYH$就会获得$1$分，而每当$YYH$连续答对k题，那么他的现有得分乘以$2$，注意答对第$k$题后，是先加$1$分到总分中，再把总分乘以$2$，此时连续答对题目计数器会清零。现在$YYH$成功对了$m$题，他想知道他的最小得分。因为这个数字可能很大，你只需要输出这个数对$1,000,000,009$取模的结果即可。</p>
-<p><strong>【输入格式】</strong></p>
-<p>仅一行，三个数$n,m,k$如题目描述。</p>
-<p><strong>【输出】</strong></p>
-<p>仅一行，一个数，$YYH$的最小得分。</p>
-<p><strong>【输入输出样例1】</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>exam.in</th>
-<th>exam.out</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5 3 2</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>【输入输出样例2】</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>exam.in</th>
-<th>exam.out</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5 4 2</td>
-<td>6</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>【样例解释】</strong></p>
-<p>样例$1$答对第$1,3,5$题可以获得最低分$3$分；</p>
-<p>样例$2$只答错第$4$题，可以获得最低分$6$分。</p>
-<p><strong>【数据范围】</strong></p>
-<p>对于$30%$的数据，$n,m,k&lt;=10$</p>
-<p>对于$60%$的数据，$n,m,k&lt;=1000$</p>
-<p>对于$100%$的数据，$1&lt;=k&lt;=n&lt;=10^9，0&lt;=m&lt;=n$</p>
-<blockquote>
-<p>贪心一下应该就可以了</p>
-</blockquote>
-<h2 id="题二：人类基因组"><a href="#题二：人类基因组" class="headerlink" title="题二：人类基因组"></a>题二：人类基因组</h2><p><strong>【问题描述】</strong></p>
-<p>L教授最近正在研究一个关于人类基因的项目，基因可以被看作一个长度为n的序列：$A<em>0,A_1,\dots,A</em>{n-1}$ 。对于这个基因序列循环移动k位之后，就可以得到一个新的基因序列为：$A<em>k,A</em>{k+1},\dots,A<em>{n-1},A_0,A_1,…,A</em>{k-1}$。当一个基因序列满足对于任意的前$i(1&lt;=i&lt;=n)$项和都满足不小于$0$，我们就称这个基因序列为优质基因序列。</p>
-<p>由于L教授最近工作比较繁忙，所以找到了正在实验室闲逛的你，你的任务就是帮$L$教授统计出所有优质基因序列的个数。</p>
-<p><strong>【输入格式】</strong></p>
-<p>  第一行一个整数$n$，表示基因序列的长度。<br>          第二行$n$个整数，依次为$A<em>0,A_1,……,A</em>{n-1}$的值。</p>
-<p><strong>【输出格式】</strong></p>
-<p>  输出仅一个整数，表示优质基因序列的个数。</p>
-<p><strong>【输入输出样例1】</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>genes.in</th>
-<th>genes.out</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3<br />2 2 3</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>【样例1说明】</strong></p>
-<p>  $3$个元素的序列：$2\;2\;3$，循环移动情况如下：<br>          循环移动0位得到序列：$2\;2\;3$，前$i$项和分别为：$2\;4\;7$，符合条件；<br>          循环移动1位得到序列：$2 \;3 \;2$，前$i$项和分别为：$2\;5\;7$；符合条件；<br>          循环移动2位得到序列：$3 \;2 \;2$，前$i$项和分别为：$3 \;5 \;7$；符合条件；</p>
-<p><strong>【输入输出样例2】</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>genes.in</th>
-<th>genes.out</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5<br />3 -1 2 -3 4</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>【数据范围】</strong></p>
-<p>  对于$30%$的数据，满足$1&lt;=N&lt;=5,000 $<br>          对于$50%$的数据，满足$1&lt;=N&lt;=10,000 $<br>          对于$100%$的数据，满足$1&lt;=N&lt;=1,000,000，-1,000&lt;=Ai&lt;=1,000 $</p>
-<blockquote>
-<p>拼成$2N$的链，单调队列维护一下即可</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> N, Sum, Cut, Ans, H, T(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">int</span> Arr[Maxn &lt;&lt; <span class="number">1</span>], Q[Maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	int X(0), T(1), O(getchar());</span><br><span class="line">	<span class="keyword">while</span> (O &lt; <span class="string">'0'</span> || O &gt; <span class="string">'9'</span>) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (O == <span class="string">'-'</span>) T = <span class="number">-1</span>;</span><br><span class="line">		O = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; O &gt;= <span class="string">'0'</span> &amp;&amp; O &lt;= <span class="string">'9'</span>; O = getchar()) X = (X &lt;&lt; <span class="number">1</span>) + (X &lt;&lt; <span class="number">3</span>) + (O ^ <span class="number">48</span>);</span><br><span class="line">	<span class="keyword">return</span> X * T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen (<span class="string">"genes.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen (<span class="string">"genes.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	N = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) Arr[i] =  Arr[i + N] = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N * <span class="number">2</span>; ++i) Arr[i] += Arr[i - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N - <span class="number">1</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[H]] &gt;= Arr[i]) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = N; i &lt; N * <span class="number">2</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; i - Q[H] &gt;= N) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">		<span class="keyword">if</span> (Arr[Q[H]] &gt;= Arr[i - N + <span class="number">1</span>]) ++Ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"%d\n"</span>, Ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>考试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2020.06.10</title>
     <url>/alanjimmy.github.io/2020/06/14/2020-06-10/</url>
     <content><![CDATA[<h2 id="1-第一题-eat-cpp-c-pas"><a href="#1-第一题-eat-cpp-c-pas" class="headerlink" title="1.第一题 (eat.cpp/c/pas)"></a>1.第一题 (eat.cpp/c/pas)</h2><p><strong>【问题描述】</strong></p>
@@ -270,6 +163,113 @@
 <h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>细节处理还是有问题，比如说$T1，T2$ 没有开$long\;long$少了整整$60$</p>
 <p>然后加上对$T2$的优化又多$5$分， 也就是说理论应该是$200$分， 实际得分$125$</p>
 <p>还要加油呀😆</p>
+]]></content>
+      <tags>
+        <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2020.06.07</title>
+    <url>/alanjimmy.github.io/2020/06/14/2020-06-07/</url>
+    <content><![CDATA[<h2 id="题一：答题比赛"><a href="#题一：答题比赛" class="headerlink" title="题一：答题比赛"></a>题一：答题比赛</h2><p><strong>【问题描述】</strong></p>
+<p>$YYH$报名参加了一个特殊的电视问答节目。这个节目共有$n$个问题，每回答正确$1$题，$YYH$就会获得$1$分，而每当$YYH$连续答对k题，那么他的现有得分乘以$2$，注意答对第$k$题后，是先加$1$分到总分中，再把总分乘以$2$，此时连续答对题目计数器会清零。现在$YYH$成功对了$m$题，他想知道他的最小得分。因为这个数字可能很大，你只需要输出这个数对$1,000,000,009$取模的结果即可。</p>
+<p><strong>【输入格式】</strong></p>
+<p>仅一行，三个数$n,m,k$如题目描述。</p>
+<p><strong>【输出】</strong></p>
+<p>仅一行，一个数，$YYH$的最小得分。</p>
+<p><strong>【输入输出样例1】</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>exam.in</th>
+<th>exam.out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 3 2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【输入输出样例2】</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>exam.in</th>
+<th>exam.out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 4 2</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【样例解释】</strong></p>
+<p>样例$1$答对第$1,3,5$题可以获得最低分$3$分；</p>
+<p>样例$2$只答错第$4$题，可以获得最低分$6$分。</p>
+<p><strong>【数据范围】</strong></p>
+<p>对于$30%$的数据，$n,m,k&lt;=10$</p>
+<p>对于$60%$的数据，$n,m,k&lt;=1000$</p>
+<p>对于$100%$的数据，$1&lt;=k&lt;=n&lt;=10^9，0&lt;=m&lt;=n$</p>
+<blockquote>
+<p>贪心一下应该就可以了</p>
+</blockquote>
+<h2 id="题二：人类基因组"><a href="#题二：人类基因组" class="headerlink" title="题二：人类基因组"></a>题二：人类基因组</h2><p><strong>【问题描述】</strong></p>
+<p>L教授最近正在研究一个关于人类基因的项目，基因可以被看作一个长度为n的序列：$A<em>0,A_1,\dots,A</em>{n-1}$ 。对于这个基因序列循环移动k位之后，就可以得到一个新的基因序列为：$A<em>k,A</em>{k+1},\dots,A<em>{n-1},A_0,A_1,…,A</em>{k-1}$。当一个基因序列满足对于任意的前$i(1&lt;=i&lt;=n)$项和都满足不小于$0$，我们就称这个基因序列为优质基因序列。</p>
+<p>由于L教授最近工作比较繁忙，所以找到了正在实验室闲逛的你，你的任务就是帮$L$教授统计出所有优质基因序列的个数。</p>
+<p><strong>【输入格式】</strong></p>
+<p>  第一行一个整数$n$，表示基因序列的长度。<br>          第二行$n$个整数，依次为$A<em>0,A_1,……,A</em>{n-1}$的值。</p>
+<p><strong>【输出格式】</strong></p>
+<p>  输出仅一个整数，表示优质基因序列的个数。</p>
+<p><strong>【输入输出样例1】</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>genes.in</th>
+<th>genes.out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3<br />2 2 3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【样例1说明】</strong></p>
+<p>  $3$个元素的序列：$2\;2\;3$，循环移动情况如下：<br>          循环移动0位得到序列：$2\;2\;3$，前$i$项和分别为：$2\;4\;7$，符合条件；<br>          循环移动1位得到序列：$2 \;3 \;2$，前$i$项和分别为：$2\;5\;7$；符合条件；<br>          循环移动2位得到序列：$3 \;2 \;2$，前$i$项和分别为：$3 \;5 \;7$；符合条件；</p>
+<p><strong>【输入输出样例2】</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>genes.in</th>
+<th>genes.out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5<br />3 -1 2 -3 4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【数据范围】</strong></p>
+<p>  对于$30%$的数据，满足$1&lt;=N&lt;=5,000 $<br>          对于$50%$的数据，满足$1&lt;=N&lt;=10,000 $<br>          对于$100%$的数据，满足$1&lt;=N&lt;=1,000,000，-1,000&lt;=Ai&lt;=1,000 $</p>
+<blockquote>
+<p>拼成$2N$的链，单调队列维护一下即可</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> N, Sum, Cut, Ans, H, T(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">int</span> Arr[Maxn &lt;&lt; <span class="number">1</span>], Q[Maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	int X(0), T(1), O(getchar());</span><br><span class="line">	<span class="keyword">while</span> (O &lt; <span class="string">'0'</span> || O &gt; <span class="string">'9'</span>) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (O == <span class="string">'-'</span>) T = <span class="number">-1</span>;</span><br><span class="line">		O = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; O &gt;= <span class="string">'0'</span> &amp;&amp; O &lt;= <span class="string">'9'</span>; O = getchar()) X = (X &lt;&lt; <span class="number">1</span>) + (X &lt;&lt; <span class="number">3</span>) + (O ^ <span class="number">48</span>);</span><br><span class="line">	<span class="keyword">return</span> X * T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen (<span class="string">"genes.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen (<span class="string">"genes.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	N = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) Arr[i] =  Arr[i + N] = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N * <span class="number">2</span>; ++i) Arr[i] += Arr[i - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N - <span class="number">1</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[H]] &gt;= Arr[i]) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = N; i &lt; N * <span class="number">2</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; i - Q[H] &gt;= N) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">		<span class="keyword">if</span> (Arr[Q[H]] &gt;= Arr[i - N + <span class="number">1</span>]) ++Ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"%d\n"</span>, Ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
 ]]></content>
       <tags>
         <tag>考试</tag>
