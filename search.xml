@@ -102,6 +102,45 @@
 <p>拼成$2N$的链，单调队列维护一下即可</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> N, Sum, Cut, Ans, H, T(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">int</span> Arr[Maxn &lt;&lt; <span class="number">1</span>], Q[Maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	int X(0), T(1), O(getchar());</span><br><span class="line">	<span class="keyword">while</span> (O &lt; <span class="string">'0'</span> || O &gt; <span class="string">'9'</span>) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (O == <span class="string">'-'</span>) T = <span class="number">-1</span>;</span><br><span class="line">		O = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; O &gt;= <span class="string">'0'</span> &amp;&amp; O &lt;= <span class="string">'9'</span>; O = getchar()) X = (X &lt;&lt; <span class="number">1</span>) + (X &lt;&lt; <span class="number">3</span>) + (O ^ <span class="number">48</span>);</span><br><span class="line">	<span class="keyword">return</span> X * T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen (<span class="string">"genes.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen (<span class="string">"genes.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	N = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) Arr[i] =  Arr[i + N] = Read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N * <span class="number">2</span>; ++i) Arr[i] += Arr[i - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N - <span class="number">1</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[H]] &gt;= Arr[i]) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = N; i &lt; N * <span class="number">2</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; i - Q[H] &gt;= N) H++;</span><br><span class="line">		<span class="keyword">while</span> (H &lt;= T &amp;&amp; Arr[Q[T]] &gt;= Arr[i]) --T;</span><br><span class="line">		Q[++T] = i;</span><br><span class="line">		<span class="keyword">if</span> (Arr[Q[H]] &gt;= Arr[i - N + <span class="number">1</span>]) ++Ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">"%d\n"</span>, Ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<h2 id="题三：最短路径"><a href="#题三：最短路径" class="headerlink" title="题三：最短路径"></a>题三：最短路径</h2><p><strong>【问题描述】</strong></p>
+<p>平面内给出 $n$个点，记横坐标最小的点为 $A$，最大的点为 $B$，现在$Zxd$想要知道在每个点经过一次（$A$点两次）的情况下从$A$走到$B$，再回到$A$的最短路径。但他是个强迫症患者，他有许多奇奇怪怪的要求与限制条件：</p>
+<ul>
+<li><p>从 $A$ 走到 $B$ 时，只能由横坐标小的点走到大的点。</p>
+</li>
+<li><p>由 $B$ 回到 $A$ 时，只能由横坐标大的点走到小的点。</p>
+</li>
+<li><p>有两个特殊点 $b1$ 和 $b2$， $b1$ 在 $0$ 到 $n-1$ 的路上，$b2$ 在 $n-1$ 到 $0$ 的路上。</p>
+</li>
+</ul>
+<p>请你帮他解决这个问题助他治疗吧！</p>
+<p><strong>【输入格式】</strong></p>
+<p>第一行三个整数 $n,b1,b2,( 0 &lt; b1，b2 &lt; n-1 且 b1 \neq b2)$。n 表示点数，从 $0$ 到 $n-1$ 编号，$b1$ 和 $b2$ 为两个特殊点的编号。</p>
+<p>以下 $n$ 行，每行两个整数 $x,y$ 表示该点的坐标$(0 &lt;= x，y &lt;= 2000)$，从 $0$ 号点顺序给出。$Doctor Gao$为了方便他的治疗，已经将给出的点按 $x$ 增序排好了。</p>
+<p><strong>【输出格式】</strong></p>
+<p>仅一行，输出最短路径长度（精确到小数点后面 $2$ 位）。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>【样例输入】</th>
+<th>【样例输出】</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 1 3<br />1 3<br />3 4<br />4 1<br />7 5<br />8 3</td>
+<td>18.18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【样例解释】</strong></p>
+<p>最短路径：$0-&gt;1-&gt;4-&gt;3-&gt;2-&gt;0$</p>
+<p><strong>【数据范围】</strong></p>
+<p>$20%$的数据$n&lt;=20$</p>
+<p>$60%$的数据$n&lt;=300$</p>
+<p>$100%$的数据$n&lt;=1000$</p>
+<p>对于所有数据$x,y,b1,b2$如题目描述。</p>
 ]]></content>
       <tags>
         <tag>考试</tag>
