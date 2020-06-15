@@ -1878,7 +1878,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7ce55e;
+  background: #e7bfa6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3185,7 +3185,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background-image: url("soureimagesbackground2.jpg");
+  background-image: url("/background2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
