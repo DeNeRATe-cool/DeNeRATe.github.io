@@ -431,6 +431,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/DeNeRATe.github.io/2020/06/24/T20200603%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/DeNeRATe.github.io/2020/06/24/T20200603%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -620,6 +630,10 @@ lcm \times Σpi+Σqi=n。</script><p>考虑到$ Σqi $还是比较小的$(≤3W)
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -972,6 +986,32 @@ lcm \times Σpi+Σqi=n。</script><p>考虑到$ Σqi $还是比较小的$(≤3W)
 
 
 
+
+  
+  
+  
+  
+  <script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item) > -1;
+    });
+    new Valine({
+      el: '#comments' ,
+      verify: false,
+      notify: true,
+      appId: 'uXldDxmh5eK3mUatmlEkTUI5-gzGzoHsz',
+      appKey: 'WVg9f2AP47AOb3f2TP0n7pnD',
+      placeholder: 'Input Your Thought',
+      avatar: 'mm',
+      meta:guest,
+      pageSize: '10' || 10,
+      visitor: false
+    });
+  </script>
 
 
 
