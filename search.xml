@@ -116,15 +116,15 @@
 <h2 id="8-绑定github新域名"><a href="#8-绑定github新域名" class="headerlink" title="8.绑定github新域名"></a>8.绑定github新域名</h2><p>进入顺序：github仓库$ \rightarrow $settings$ \rightarrow $Github Pages$ \rightarrow $Custom domain</p>
 <p>在这个地方输入你买的域名，save即可</p>
 <p><img src="https://i.loli.net/2020/06/27/6qhETFNRi4coMfa.png" alt="腾讯云域名-10.png"></p>
-<h2 id="9-添加CNAME文件"><a href="#9-添加CNAME文件" class="headerlink" title="9.添加CNAME文件"></a>9.添加CNAME文件</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>如果没有这个文件，我们在每次hexo g，hexo d之后都需要重新在github上save新域名，非常的麻烦</p>
-<p>所以可以直接在这个地方加一个CNAME文件，保证这个新域名地址的Blog也可以被更新</p>
-<p><strong>C:\hexo\source</strong>中添加一个名为CNAME的文件</p>
+<h2 id="9-添加CNAME文件"><a href="#9-添加CNAME文件" class="headerlink" title="9.添加CNAME文件"></a>9.添加CNAME文件</h2><p><strong>C:\hexo\source</strong>中添加一个名为CNAME的文件</p>
 <p><strong>温馨提示：</strong>这个文件需要将其的后缀名删除！！！（如下图）</p>
 <p><img src="https://i.loli.net/2020/06/27/PYplstVOXjJHzm1.png" alt="腾讯云域名-11.png"></p>
 <p>再用某某方式打开它（这里我用的是Sublime）</p>
 <p>并在其中添加你的新域名</p>
 <p>这样之后，就Perfect了</p>
 <p><img src="https://i.loli.net/2020/06/27/Zxn1OkSMr38zUhY.png" alt="腾讯云域名-12.png"></p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>如果没有这个文件，我们在每次hexo g，hexo d之后都需要重新在github上save新域名，非常的麻烦</p>
+<p>所以可以直接在这个地方加一个CNAME文件，保证这个新域名地址的Blog也可以被更新</p>
 ]]></content>
       <tags>
         <tag>Blog Chore</tag>
