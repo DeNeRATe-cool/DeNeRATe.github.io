@@ -125,6 +125,11 @@
 <p><img src="https://i.loli.net/2020/06/27/Zxn1OkSMr38zUhY.png" alt="腾讯云域名-12.png"></p>
 <h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>如果没有这个文件，我们在每次hexo g，hexo d之后都需要重新在github上save新域名，非常的麻烦</p>
 <p>所以可以直接在这个地方加一个CNAME文件，保证这个新域名地址的Blog也可以被更新</p>
+<h2 id="10-修改默认域名地址"><a href="#10-修改默认域名地址" class="headerlink" title="10.修改默认域名地址"></a>10.修改默认域名地址</h2><p>这个时候我们只需要打开文件</p>
+<p><strong>C:\hexo\_config.yml</strong>进行两部修改：</p>
+<p>修改如图<strong>url</strong>处的域名（即改为<strong>自己购买的域名</strong>）</p>
+<p>将<strong>permalink</strong>处改为如图的<strong>“articles/:title/”</strong>即可大功告成</p>
+<p><img src="https://i.loli.net/2020/07/04/efpMFAtPi81kKsY.png" alt="腾讯云域名-13.png"></p>
 ]]></content>
       <tags>
         <tag>Blog Chore</tag>
