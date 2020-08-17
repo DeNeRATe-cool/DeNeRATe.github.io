@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/he-2.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/he-1.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="计算几何选讲前言相信大家都已经很熟悉这些知识点了，我们就简要说明一下即可 对于计算几何，其实原理都很简单，只是比较难想。 凸包定义在平面上能包含所有给定点的最小凸多边形叫做凸包。 或：对于给定集合$X$，所有包含$ X $的凸集的交集$S$被称为$X$的 凸包 。 算法常用算法为Graham扫描法和Andrew算法。 对Graham扫描法有兴趣的大佬可以自行了解一下 蒟蒻我只学过Andrew算法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算几何选讲">
+<meta property="og:url" content="denerate.ink/articles/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E9%80%89%E8%AE%B2/index.html">
+<meta property="og:site_name" content="DeNeRATe">
+<meta property="og:description" content="计算几何选讲前言相信大家都已经很熟悉这些知识点了，我们就简要说明一下即可 对于计算几何，其实原理都很简单，只是比较难想。 凸包定义在平面上能包含所有给定点的最小凸多边形叫做凸包。 或：对于给定集合$X$，所有包含$ X $的凸集的交集$S$被称为$X$的 凸包 。 算法常用算法为Graham扫描法和Andrew算法。 对Graham扫描法有兴趣的大佬可以自行了解一下 蒟蒻我只学过Andrew算法。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/HP1Kd9MoyOitrwq.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/zr5DjhAw3MWV1lN.gif">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/LKQ6JRl9WjHU5X7.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/uP8v3ziGJnBfpQr.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/eSgtrfZN4R6dbLx.gif">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/W7bLrfyn2RgG1q9.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/15/WjdGPueO41YngFk.png">
+<meta property="article:published_time" content="2020-08-17T05:10:13.000Z">
+<meta property="article:modified_time" content="2020-08-17T05:28:34.968Z">
+<meta property="article:author" content="DeNeRATe">
+<meta property="article:tag" content="Courseware">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/08/15/HP1Kd9MoyOitrwq.png">
+
+
+
+
+
+
+  <link rel="canonical" href="denerate.ink/articles/计算几何选讲/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>计算几何选讲 | DeNeRATe</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/DeNeRATe-cool" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DeNeRATe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Go Straight On My Way</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="denerate.ink/articles/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E9%80%89%E8%AE%B2/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DeNeRATe"/>
+      <meta itemprop="description" content="Life is hard to cut off, lifelong lovesickness"/>
+      <meta itemprop="image" content="/images/C.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DeNeRATe"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算几何选讲
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-08-17 13:10:13 / Modified: 13:28:34" itemprop="dateCreated datePublished" datetime="2020-08-17T13:10:13+08:00">2020-08-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/articles/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E9%80%89%E8%AE%B2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/articles/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E9%80%89%E8%AE%B2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">37k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">34 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="计算几何选讲"><a href="#计算几何选讲" class="headerlink" title="计算几何选讲"></a>计算几何选讲</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信大家都已经<strong>很熟悉</strong>这些知识点了，我们就<strong>简要说明</strong>一下即可</p>
+<p>对于计算几何，其实<strong>原理</strong>都<strong>很简单</strong>，只是比较难想。</p>
+<h2 id="凸包"><a href="#凸包" class="headerlink" title="凸包"></a>凸包</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在平面上能<strong>包含所有给定点</strong>的<strong>最小凸多边形</strong>叫做<strong>凸包</strong>。</p>
+<p>或：对于给定集合$X$，所有包含$ X $的<strong>凸集的交集</strong>$S$被称为$X$的 <strong>凸包</strong> 。</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>常用算法为<strong>Graham扫描法</strong>和<strong>Andrew算法</strong>。</p>
+<p>对Graham扫描法有兴趣的大佬可以自行了解一下</p>
+<p><strong>蒟蒻</strong>我只学过Andrew算法。。。</p>
+<h3 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h3><p>凸包是一个凸多边形，证明显然</p>
+<p><img src="https://i.loli.net/2020/08/15/HP1Kd9MoyOitrwq.png" alt="计算几何选讲-1.png"></p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>将所有的平面点<strong>按照</strong>$x$大小来排序</p>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>将$ p_1,p_2 $放入凸包，从$p_3$开始，若当前点在<strong>栈顶两点</strong>所在直线的左侧，则加进栈，否则弹出栈顶，接受新点</p>
+<p>参考上边的图</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P2742</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;windows.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(int i=A;i&lt;=B;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(int i=A;i&gt;=B;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXn=<span class="number">1e4</span>+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Total,Top,Stack[MAXn],Ans;</span><br><span class="line"><span class="keyword">bool</span> Vis[MAXn];</span><br><span class="line"><span class="keyword">double</span> Res;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">double</span> Fir,Sec;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (Node A,Node B) &#123; </span><br><span class="line">		<span class="keyword">if</span>(A.Fir==B.Fir) <span class="keyword">return</span> A.Sec&lt;B.Sec; </span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> A.Fir&lt;B.Fir;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;Num[MAXn],Bag[MAXn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Distance</span><span class="params">(Node X,Node Y)</span> </span>&#123; <span class="keyword">return</span> (<span class="keyword">double</span>)<span class="built_in">sqrt</span>((<span class="keyword">double</span>)(X.Fir-Y.Fir)*(X.Fir-Y.Fir)+(<span class="keyword">double</span>)(X.Sec-Y.Sec)*(X.Sec-Y.Sec)); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Cross</span><span class="params">(Node X,Node Y)</span> </span>&#123; <span class="keyword">return</span> X.Fir*Y.Sec-X.Sec*Y.Fir; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Side</span><span class="params">(Node X,Node Y,Node Z)</span> </span>&#123; </span><br><span class="line">    Node A=Node&#123;Y.Fir-X.Fir,Y.Sec-X.Sec&#125;;</span><br><span class="line">    Node B=Node&#123;Z.Fir-X.Fir,Z.Sec-X.Sec&#125;;</span><br><span class="line">    <span class="keyword">return</span> Cross(A,B);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Total);</span><br><span class="line">    FOR(i,<span class="number">1</span>,Total) <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>,&amp;Num[i].Fir,&amp;Num[i].Sec);</span><br><span class="line">    sort(Num+<span class="number">1</span>,Num+Total+<span class="number">1</span>); Top=<span class="number">0</span>;</span><br><span class="line">    Stack[++Top]=<span class="number">1</span>;</span><br><span class="line">    FOR(i,<span class="number">2</span>,Total) &#123;</span><br><span class="line">        <span class="keyword">while</span>(Top&gt;=<span class="number">2</span> &amp;&amp; Side(Num[Stack[Top<span class="number">-1</span>]],Num[Stack[Top]],Num[i])&lt;=(<span class="keyword">double</span>)<span class="number">0</span>) Vis[Stack[Top--]]=<span class="literal">false</span>;</span><br><span class="line">        Vis[i]=<span class="literal">true</span>; Stack[++Top]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> Temp=Top;</span><br><span class="line">    BOR(i,Total<span class="number">-1</span>,<span class="number">1</span>) </span><br><span class="line">        <span class="keyword">if</span>(!Vis[i]) &#123;</span><br><span class="line">            <span class="keyword">while</span>(Top&gt;Temp &amp;&amp; Side(Num[Stack[Top<span class="number">-1</span>]],Num[Stack[Top]],Num[i])&lt;=(<span class="keyword">double</span>)<span class="number">0</span>) Vis[Stack[Top--]]=<span class="literal">false</span>;</span><br><span class="line">            Vis[i]=<span class="literal">true</span>; Stack[++Top]=i;</span><br><span class="line">        &#125;</span><br><span class="line">    FOR(i,<span class="number">1</span>,Top<span class="number">-1</span>) Res+=Distance(Num[Stack[i]],Num[Stack[i+<span class="number">1</span>]]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>,Res);</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="旋转卡壳"><a href="#旋转卡壳" class="headerlink" title="旋转卡壳"></a>旋转卡壳</h2><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>旋转卡壳可以用于求<strong>凸包的直径、宽度，两个不相交凸包间的最大距离和最小距离等</strong></p>
+<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p><img src="https://i.loli.net/2020/08/15/zr5DjhAw3MWV1lN.gif" alt="计算几何选讲-2.gif"></p>
+<p>被一对卡壳正好卡住的对应点对称为<strong>对踵点</strong></p>
+<p>可以证明对踵点个数<strong>不会超过$ \frac{3}{2} N $个</strong>，也就是说对踵点个数是$O(N)$的</p>
+<p>所以，我们可以模仿凸包的<strong>栈思想</strong></p>
+<p>因为，每次最优解必然存在于对踵点对集合中</p>
+<p><img src="https://i.loli.net/2020/08/15/LKQ6JRl9WjHU5X7.png" alt="计算几何选讲-4.png"></p>
+<p>所以每次比较</p>
+<p><img src="https://i.loli.net/2020/08/15/uP8v3ziGJnBfpQr.png" alt="计算几何选讲-3.png"></p>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P1452 POJ 2187</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;windows.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(int i=A;i&lt;=B;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(int i=A;i&gt;=B;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXn=<span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Eps=<span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Sign</span><span class="params">(<span class="keyword">double</span> Temp)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">fabs</span>(Temp)&lt;Eps ? <span class="number">0</span> : (Temp&gt;<span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>); &#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">    <span class="keyword">double</span> X,Y;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> - (Point A,Point B) &#123; Point Temp; Temp.X=A.X-B.X; Temp.Y=A.Y-B.Y; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> + (Point A,Point B) &#123; Point Temp; Temp.X=A.X+B.X; Temp.Y=A.Y+B.Y; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> * (<span class="keyword">double</span> A,Point B) &#123; Point Temp; Temp.X=A*B.X; Temp.Y=A*B.Y; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">double</span> <span class="keyword">operator</span> * (Point A,Point B) &#123; <span class="keyword">return</span> A.X*B.X+A.Y*B.Y; &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">double</span> <span class="keyword">operator</span> ^ (Point A,Point B) &#123; <span class="keyword">return</span> A.X*B.Y-A.Y*B.X; &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (Point A,Point B) &#123;</span><br><span class="line">        <span class="keyword">return</span> A.X!=B.X ? A.X&lt;B.X : A.Y&lt;B.Y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;Dot[MAXn];</span><br><span class="line"><span class="keyword">int</span> Total,Top,u,v,w,Cnt=<span class="number">2</span>,Stack[MAXn];</span><br><span class="line"><span class="keyword">bool</span> Vis[MAXn];</span><br><span class="line"><span class="keyword">double</span> Ans;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Cross</span><span class="params">(Point A,Point B,Point T)</span> </span>&#123; <span class="keyword">return</span> (B-A)^(T-A); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Power</span><span class="params">(<span class="keyword">double</span> Temp)</span> </span>&#123; <span class="keyword">return</span> Temp*Temp; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">Distance</span><span class="params">(Point A,Point B)</span> </span>&#123; <span class="keyword">return</span> (Power(A.X-B.X)+Power(A.Y-B.Y)); &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Andrew</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Stack[++Top]=<span class="number">1</span>;</span><br><span class="line">    FOR(i,<span class="number">2</span>,Total) &#123;</span><br><span class="line">        <span class="keyword">while</span>(Top&gt;=<span class="number">2</span> &amp;&amp; Cross(Dot[Stack[Top<span class="number">-1</span>]],Dot[Stack[Top]],Dot[i])&lt;=(<span class="keyword">double</span>)<span class="number">0</span>) Vis[Stack[Top--]]=<span class="literal">false</span>;</span><br><span class="line">        Vis[i]=<span class="literal">true</span>; Stack[++Top]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> Temp=Top;</span><br><span class="line">    BOR(i,Total<span class="number">-1</span>,<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!Vis[i]) &#123;</span><br><span class="line">            <span class="keyword">while</span>(Top&gt;Temp &amp;&amp; Cross(Dot[Stack[Top<span class="number">-1</span>]],Dot[Stack[Top]],Dot[i])&lt;=(<span class="keyword">double</span>)<span class="number">0</span>) Vis[Stack[Top--]]=<span class="literal">false</span>;</span><br><span class="line">            Vis[i]=<span class="literal">true</span>; Stack[++Top]=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Total);</span><br><span class="line">    FOR(i,<span class="number">1</span>,Total) <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>,&amp;Dot[i].X,&amp;Dot[i].Y);</span><br><span class="line">    sort(Dot+<span class="number">1</span>,Dot+Total+<span class="number">1</span>);</span><br><span class="line">    Andrew();</span><br><span class="line">    FOR(i,<span class="number">1</span>,Top<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span>(Cross(Dot[Stack[i]],Dot[Stack[i+<span class="number">1</span>]],Dot[Stack[Cnt]])&lt;Cross(Dot[Stack[i]],Dot[Stack[i+<span class="number">1</span>]],Dot[Stack[Cnt+<span class="number">1</span>]])) &#123; Cnt++; <span class="keyword">if</span>(Cnt&gt;Top<span class="number">-1</span>) Cnt=<span class="number">1</span>; &#125;</span><br><span class="line">      Ans=<span class="built_in">max</span>(Ans,<span class="built_in">max</span>(Distance(Dot[Stack[i]],Dot[Stack[Cnt]]),Distance(Dot[Stack[i+<span class="number">1</span>]],Dot[Stack[Cnt]])));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.0lf\n"</span>,Ans);</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="半平面交"><a href="#半平面交" class="headerlink" title="半平面交"></a>半平面交</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>一条直线和直线的一侧。半平面是一个<strong>点集</strong>，因此是一条直线和直线的一侧构成的点集。当包含直线时，称为<strong>闭半平面</strong>；当不包含直线时，称为<strong>开半平面</strong>。</p>
+<p>解析式类似于<strong>线性规划</strong>$ \Rightarrow Ax+By+X \geq 0 $</p>
+<p>通常会<strong>统一</strong>以向量的左侧或者右侧作为半平面</p>
+<p><img src="https://i.loli.net/2020/08/15/eSgtrfZN4R6dbLx.gif" alt="计算几何选讲-5.gif"></p>
+<h3 id="思想-1"><a href="#思想-1" class="headerlink" title="思想"></a>思想</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h4><p>我们维护每一条直线为一个向量，并利用函数<strong>atan2(double y,double x)</strong>，返回$ \theta \in (- \pi,\pi], \theta=arctan \frac{y}{x} $</p>
+<p>进行<strong>极角排序</strong>，得到新的边集</p>
+<p>温馨提示：</p>
+<p>排序时，如果遇到<strong>共线向量</strong>（且方向相同），则取<strong>靠近可行域</strong>的一个。比如两个向量的极角相同，而我们要的是向量的左侧半平面，那么我们只需要保留左侧的向量。判断方法是取其中一个向量的起点或终点与另一个比较，检查是在左边还是在右边。</p>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h4><p>我们维护一个<strong>单调队列</strong></p>
+<p>即维护一个凸壳，同理，进行队首队次首和新直线的对比</p>
+<p>当然，我们维护一个<strong>交点数组</strong></p>
+<p>对于当前向量，如果上一个交点在这条向量表示的半平面交的 <strong>异侧</strong> ，那么上一条边就没有意义了。</p>
+<p><img src="https://i.loli.net/2020/08/15/W7bLrfyn2RgG1q9.png" alt="计算几何选讲-6.png"></p>
+<h4 id="注"><a href="#注" class="headerlink" title="注"></a>注</h4><p>当出现一个可以把队列里的点<strong>全部弹出去</strong>的向量（即所有队列里的点都在该向量的右侧），则我们 <strong>必须</strong> <strong>先处理队尾，再处理队首</strong>。因此在循环中，我们先枚举 <code>--r;</code> 的部分，再枚举 <code>++l;</code> 的部分，才不会错。原因如下。</p>
+<p><img src="https://i.loli.net/2020/08/15/WjdGPueO41YngFk.png" alt="计算几何选讲-7.png"></p>
+<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P4196</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;windows.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(int i=A;i&lt;=B;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(int i=A;i&gt;=B;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXn=<span class="number">5e2</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Eps=<span class="number">1e-8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Total,Head=<span class="number">1</span>,Tail=<span class="number">0</span>,Cnt,Side,Tot;</span><br><span class="line"><span class="keyword">double</span> Ans;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">    <span class="keyword">double</span> X,Y;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> - (Point A, Point B) &#123; Point Temp; Temp.X=A.X-B.X; Temp.Y=A.Y-B.Y; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> + (Point A, Point B) &#123; Point Temp; Temp.X=B.X+A.X; Temp.Y=B.Y+A.Y; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">double</span> <span class="keyword">operator</span> * (Point A, Point B) &#123; <span class="keyword">return</span> A.X*B.X+A.Y*B.Y; &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">double</span> <span class="keyword">operator</span> ^ (Point A, Point B) &#123; <span class="keyword">return</span> A.X*B.Y-A.Y*B.X; &#125;</span><br><span class="line">    <span class="keyword">friend</span> Point <span class="keyword">operator</span> * (<span class="keyword">double</span> K, Point B) &#123; Point Temp; Temp.X=B.X*K; Temp.Y=B.Y*K; <span class="keyword">return</span> Temp; &#125;</span><br><span class="line">&#125;Dot[MAXn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Sign</span><span class="params">(<span class="keyword">double</span> Temp)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">fabs</span>(Temp)&lt;=Eps ? <span class="number">0</span> : (Temp&gt;<span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>); &#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    Point S,E;</span><br><span class="line">    <span class="keyword">double</span> Slope;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (Node A, Node B) &#123;</span><br><span class="line">        <span class="keyword">return</span> Sign(A.Slope-B.Slope)==<span class="number">0</span> ? Sign((A.E-A.S)^(B.E-A.S))&gt;<span class="number">0</span> : Sign(A.Slope-B.Slope)&lt;<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;Line[MAXn],Mine[MAXn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> Point <span class="title">Inter</span><span class="params">(Node A,Node B)</span> </span>&#123;</span><br><span class="line">    Point S1=A.S,S2=B.S,E1=A.E,E2=B.E;</span><br><span class="line">    E1=E1-S1,E2=E2-S2;</span><br><span class="line">    Point Temp=S2-S1;</span><br><span class="line">    <span class="keyword">return</span> S2+((Temp^E1)/(E1^E2))*E2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">inline Point Inter(Node A,Node B) &#123;</span></span><br><span class="line"><span class="comment">    Point S1=A.S,S2=B.S,E1=A.E,E2=B.E;</span></span><br><span class="line"><span class="comment">    E1=E1-S1;E2=E2-S2;</span></span><br><span class="line"><span class="comment">    Point Temp=S2-S1;</span></span><br><span class="line"><span class="comment">    return S2+((Temp^E1)/(E1^E2))*E2;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Check</span><span class="params">(Node A,Node B,Node X)</span> </span>&#123;</span><br><span class="line">    Point Temp=Inter(A,B);</span><br><span class="line">    <span class="keyword">return</span> Sign((X.E-X.S)^(Temp-X.S))&lt;<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Half_Plane</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    sort(Line+<span class="number">1</span>,Line+Cnt+<span class="number">1</span>); </span><br><span class="line">    FOR(i,<span class="number">1</span>,Cnt) &#123;</span><br><span class="line">        <span class="keyword">if</span>(Sign(Line[i].Slope-Line[i<span class="number">-1</span>].Slope)!=<span class="number">0</span>) Tot++;</span><br><span class="line">        Line[Tot]=Line[i];</span><br><span class="line">    &#125;</span><br><span class="line">    Mine[++Tail]=Line[<span class="number">1</span>];Mine[++Tail]=Line[<span class="number">2</span>];</span><br><span class="line">    FOR(i,<span class="number">3</span>,Tot) &#123;</span><br><span class="line">        <span class="keyword">while</span>(Head&lt;Tail &amp;&amp; Check(Mine[Tail<span class="number">-1</span>],Mine[Tail],Line[i])) Tail--;</span><br><span class="line">        <span class="keyword">while</span>(Head&lt;Tail &amp;&amp; Check(Mine[Head+<span class="number">1</span>],Mine[Head],Line[i])) Head++;</span><br><span class="line">        Mine[++Tail]=Line[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(Head&lt;Tail &amp;&amp; Check(Mine[Tail<span class="number">-1</span>],Mine[Tail],Line[Head])) Tail--;</span><br><span class="line">    <span class="keyword">while</span>(Head&lt;Tail &amp;&amp; Check(Mine[Head+<span class="number">1</span>],Mine[Head],Line[Tail])) Head++;</span><br><span class="line">    Mine[Tail+<span class="number">1</span>]=Mine[Head]; Cnt=<span class="number">0</span>;</span><br><span class="line">    FOR(i,Head,Tail) Dot[++Cnt]=Inter(Mine[i],Mine[i+<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Total);</span><br><span class="line">    FOR(i,<span class="number">1</span>,Total) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Side);</span><br><span class="line">        FOR(j,<span class="number">1</span>,Side) <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>,&amp;Dot[j].X,&amp;Dot[j].Y);</span><br><span class="line">        Dot[Side+<span class="number">1</span>]=Dot[<span class="number">1</span>];</span><br><span class="line">        FOR(j,<span class="number">1</span>,Side) Line[++Cnt]=Node&#123; Dot[j],Dot[j+<span class="number">1</span>] &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    FOR(i,<span class="number">1</span>,Cnt) &#123; Line[i].Slope=<span class="built_in">atan2</span>(Line[i].E.Y-Line[i].S.Y,Line[i].E.X-Line[i].S.X); &#125;</span><br><span class="line">    Half_Plane();</span><br><span class="line">    Dot[Cnt+<span class="number">1</span>]=Dot[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span>(Cnt&gt;<span class="number">2</span>) FOR(i,<span class="number">1</span>,Cnt) Ans+=(Dot[i]^Dot[i+<span class="number">1</span>]);</span><br><span class="line">    Ans=<span class="built_in">fabs</span>(Ans)/<span class="number">2.0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.3lf\n"</span>,Ans);</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Courseware/" rel="tag"># Courseware</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/articles/%E5%87%A0%E4%BD%95%E5%8F%8D%E6%BC%94/" rel="next" title="几何反演">
+                <i class="fa fa-chevron-left"></i> 几何反演
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/articles/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E9%80%86%E5%8F%98%E6%8D%A2/" rel="prev" title="快速傅里叶逆变换">
+                快速傅里叶逆变换 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/C.png"
+                alt="DeNeRATe"/>
+            
+              <p class="site-author-name" itemprop="name">DeNeRATe</p>
+              <p class="site-description motion-element" itemprop="description">Life is hard to cut off, lifelong lovesickness</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1229836346@qq.com" title="E-Mail &amp;rarr; mailto:1229836346@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.luogu.com.cn/user/38171" title="Luogu &amp;rarr; https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;38171" rel="noopener" target="_blank"><i class="fa fa-fw fa-code"></i>Luogu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.weibo.com/6493404409/profile?topnav=1&wvr=6" title="Weibo &amp;rarr; https:&#x2F;&#x2F;www.weibo.com&#x2F;6493404409&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://alansblog.ink/" title="http:&#x2F;&#x2F;alansblog.ink&#x2F;" rel="noopener" target="_blank">AlanTuring</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://jklover.hs-blog.cf/" title="http:&#x2F;&#x2F;jklover.hs-blog.cf&#x2F;" rel="noopener" target="_blank">JKLover</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dcoitheshadow.github.io/" title="https:&#x2F;&#x2F;dcoitheshadow.github.io&#x2F;" rel="noopener" target="_blank">TheShadow</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xecades.xyz/" title="https:&#x2F;&#x2F;xecades.xyz&#x2F;" rel="noopener" target="_blank">Xecades</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算几何选讲"><span class="nav-number">1.</span> <span class="nav-text">计算几何选讲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凸包"><span class="nav-number">1.2.</span> <span class="nav-text">凸包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理"><span class="nav-number">1.2.3.</span> <span class="nav-text">引理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.2.4.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.2.5.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转卡壳"><span class="nav-number">1.3.</span> <span class="nav-text">旋转卡壳</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">1.3.1.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.3.2.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半平面交"><span class="nav-number">1.4.</span> <span class="nav-text">半平面交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">思想</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-2"><span class="nav-number">1.4.3.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DeNeRATe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">97k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">1:28</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color='255,51,51' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  <script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item) > -1;
+    });
+    new Valine({
+      el: '#comments' ,
+      verify: false,
+      notify: true,
+      appId: 'uXldDxmh5eK3mUatmlEkTUI5-gzGzoHsz',
+      appKey: 'WVg9f2AP47AOb3f2TP0n7pnD',
+      placeholder: 'Input Your Thought',
+      avatar: 'mm',
+      meta:guest,
+      pageSize: '10' || 10,
+      visitor: false
+    });
+  </script>
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
