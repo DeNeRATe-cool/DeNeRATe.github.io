@@ -1340,21 +1340,34 @@ l= \frac{1}{|G|} \sum_{k=1}^{|G|} m^{ \sigma_k}</script><h2 id="参考文献"><a
 <h3 id="反链"><a href="#反链" class="headerlink" title="反链"></a>反链</h3><p>正如名字一样，反链和链的定义<strong>恰好相反</strong>，对于一个集合，它是反链当且仅当这个集合里的元素两两都是<strong>不可比的</strong>。换句话说，这个集合里的<strong>任何</strong>两个元素<strong>无法联通</strong>（在一张<code>DAG</code>上）</p>
 <h3 id="链划分"><a href="#链划分" class="headerlink" title="链划分"></a>链划分</h3><p>我们将$ S $中的所有元素划分成若干条链，使每个元素都在且<strong>仅在唯一一条链</strong>中，叫<strong>链划分</strong></p>
 <h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>设偏序集$ S $。$ S $能划分成的<strong>最少的全序集</strong>的个数为$ K $，$ S $的<strong>最大反链</strong>的元素个数为$M$</p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>先证明$ K \geq M $。设反链$ A={a_1,a_2, \cdots,a_M} $。假设$ K&lt;M $，那么由<strong>抽屉原理</strong>，必然有两个元素$ a_i,a_j $在同一个<strong>全序集</strong>中。那么$ a_i,a_j $可比。与$ a_i,a_j $不可比<strong>矛盾</strong>。</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>先证明$ K \geq M $。设反链</p>
+<script type="math/tex; mode=display">
+ A={a_1,a_2, \cdots,a_M}</script><p>假设$ K&lt;M $，那么由<strong>抽屉原理</strong>，必然有两个元素$ a_i,a_j $在同一个<strong>全序集</strong>中。那么$ a_i,a_j $可比。与$ a_i,a_j $不可比<strong>矛盾</strong>。</p>
 <h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p> 再证明$ K=M $。用<strong>第二数学归纳法</strong></p>
 <p>设全序集$S$中有$m$个元素</p>
 <h4 id="1-gt"><a href="#1-gt" class="headerlink" title="1&gt;"></a>1&gt;</h4><p>当$m=0$和$m=1$时，对于命题结论<strong>显然成立</strong>。</p>
-<h4 id="2-gt"><a href="#2-gt" class="headerlink" title="2&gt;"></a>2&gt;</h4><p><strong>假设</strong>$ m&lt;n(n \in \mathbb{N}) $时命题成立，现在证$ m=n $时，命题也成立。</p>
-<p>设$x$为$S$中的一个<strong>极大元</strong>。考虑$ S’=S-{x} $这个偏序集。由于$ |S’|&lt;n $，由<strong>归纳假设</strong>，$S’$满足命题。设$S’$能划分成的<strong>最小的全序集</strong>个数为$k$，<strong>最大反链</strong>的元素个数也为$k$。那么我们设$S’$被划分成了$k$个链分别为$ C_1,C_2, \cdots,C_k $。设所有长度为$k$的<strong>反链</strong>分别为$ A_1,A_2, \cdots,A_r $。（假设有$r$条长度为$k$的反链）</p>
-<p>那么对于<strong>任意</strong>一个$A<em>i$，$A_i$的元素必定是$k$条链上，每条链取一个元素。设为$ a</em>{i1},a<em>{i2}, \cdots,a</em>{ik} $</p>
-<p>那么我们考虑集合$ B= {b<em>1,b_2, \cdots ,b_k}={ max(a</em>{i1}), max(a<em>{i2}), max(a</em>{i3}), \cdots , max(a<em>{ik}) } $。 这个集合<strong>一定也是一条反链</strong>。（用<strong>反证法</strong>很容易证明：假设存在两个元素$b_i,b_j$可比，不妨设$ b_i \leq b_j $，其中$b_i$和$b_j$分别位于链$C_i$和$C_j$上。那么$b_i$所在链的每个$a</em>{ix}$都与$b<em>j$可比，与**$C_i$上存在一个$a</em>{ix}$与$b_j$不可比<strong>矛盾。）</strong>（加粗的地方之所以是正确的，是因为$C_i$与$C_j$上肯定有两个元素属于同一条反链）**</p>
+<h4 id="2-gt"><a href="#2-gt" class="headerlink" title="2&gt;"></a>2&gt;</h4><p><strong>假设</strong></p>
+<script type="math/tex; mode=display">
+ m<n(n \in \mathbb{N})</script><p>时命题成立，现在证$ m=n $时，命题也成立。</p>
+<p>设$x$为$S$中的一个<strong>极大元</strong>。考虑</p>
+<script type="math/tex; mode=display">
+S'=S-{x}</script><p>这个偏序集。由于$ |S’|&lt;n $，由<strong>归纳假设</strong>，$S’$满足命题。设$S’$能划分成的<strong>最小的全序集</strong>个数为$k$，<strong>最大反链</strong>的元素个数也为$k$。那么我们设$S’$被划分成了$k$个链分别为$ C_1,C_2, \cdots,C_k $。设所有长度为$k$的<strong>反链</strong>分别为$ A_1,A_2, \cdots,A_r $。（假设有$r$条长度为$k$的反链）</p>
+<p>那么对于<strong>任意</strong>一个$A_i$，$A_i$的元素必定是$k$条链上，每条链取一个元素。设为</p>
+<script type="math/tex; mode=display">
+ a_{i1},a_{i2}, \cdots,a_{ik}</script><p>那么我们考虑集合</p>
+<script type="math/tex; mode=display">
+ B= {b_1,b_2, \cdots ,b_k}={ max(a_{i1}), max(a_{i2}), max(a_{i3}), \cdots , max(a_{ik}) }</script><p>这个集合<strong>一定也是一条反链</strong>。（用<strong>反证法</strong>很容易证明：假设存在两个元素$b<em>i,b_j$可比，不妨设$ b_i \leq b_j $，其中$b_i$和$b_j$分别位于链$C_i$和$C_j$上。那么$b_i$所在链的每个$a</em>{ix}$都与$b<em>j$可比，与**$C_i$上存在一个$a</em>{ix}$与$b_j$不可比<strong>矛盾。）</strong>（加粗的地方之所以是正确的，是因为$C_i$与$C_j$上肯定有两个元素属于同一条反链）**</p>
 <p>现在考虑加入元素$x$的集合$S$。一个显然的事实是，<strong>加入一个极大元，不可能让划分的最少链个数更少，但是也不能让链的个数增加2及以上（否则肯定不满足最少链）。也不能让反链的最大长度更小</strong></p>
 <p>分<strong>两种情况</strong>：</p>
 <h5 id="①"><a href="#①" class="headerlink" title="①"></a>①</h5><p>如果$x$这个<strong>极大元</strong>与B中每个元素都<strong>不可比</strong>。那么考虑$ B \cup {x} $，就是一个长度为$ k+1 $的反链。那么最少能划分的链的个数至少是$ k+1 $。而加入一个元素，链的条数至多增加1。因此，链的<strong>最少条数</strong>就是$ k+1 $。这样，对于这种情况，命题对于$ m=n $时也成立了。</p>
 <h5 id="②"><a href="#②" class="headerlink" title="②"></a>②</h5><p>如果$x$与$B$中的某个元素可比，假设$x$与$b_i$可比，那么显然$ x \geq bi $</p>
-<p>考虑集合 $ D={a<em>{i1},a</em>{i2}, \cdots ,a<em>{ir}} \cup {x} $。$D$显然也是一条链。 现在考虑$ S’’=S-D $这个集合。由于每个长度为$k$的链都被我们抽掉了一个元素，所以集合$ S’’ $不会有长度为$k$的反链了，而长度为$k-1$的反链显然是<strong>存在</strong>的（按照原来的构造）。由<strong>归纳</strong>假设，$S’’$最少能划分成的链也是$k-1$。不妨设划分为了$ C’_1，C’_2，\cdots ,C’</em>{k-1} $。</p>
-<p>那么，我们对$S$就构造出了$k$条链的情况：$ C’<em>1，C’_2，\cdots ,C’</em>{k-1},D $</p>
-<p>所以反链的长度<strong>最大</strong>为$k$了。而去掉$x$就已经可以构造出长度为$k$的反链，因此$S$的最大反链至少是$k$。因此<strong>最大反链</strong>就是$k$。</p>
+<p>考虑集合 </p>
+<script type="math/tex; mode=display">
+ D={a_{i1},a_{i2}, \cdots ,a_{ir}} \cup {x}</script><p>$D$显然也是一条链。 现在考虑$ S’’=S-D $这个集合。由于每个长度为$k$的链都被我们抽掉了一个元素，所以集合$ S’’ $不会有长度为$k$的反链了，而长度为$k-1$的反链显然是<strong>存在</strong>的（按照原来的构造）。由<strong>归纳</strong>假设，$S’’$最少能划分成的链也是$k-1$。不妨设划分为了</p>
+<script type="math/tex; mode=display">
+C'_1，C'_2，\cdots ,C'_{k-1}</script><p>那么，我们对$S$就构造出了$k$条链的情况：</p>
+<script type="math/tex; mode=display">
+ C'_1，C'_2，\cdots ,C'_{k-1},D</script><p>所以反链的长度<strong>最大</strong>为$k$了。而去掉$x$就已经可以构造出长度为$k$的反链，因此$S$的最大反链至少是$k$。因此<strong>最大反链</strong>就是$k$。</p>
 <p><strong>证毕！</strong></p>
 <h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><p><a href="https://cmwqf.github.io/2019/12/17/%E6%B5%85%E8%B0%88Dilworth%E5%AE%9A%E7%90%86/" target="_blank" rel="noopener">浅谈Dilworth定理</a></p>
 <p><a href="https://www.cnblogs.com/itlqs/p/6636222.html" target="_blank" rel="noopener">Dilworth定理证明</a></p>
