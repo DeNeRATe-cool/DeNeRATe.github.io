@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/he-2.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/he-1.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="T20200903赛后总结成绩排行：T20200903成绩总结这次是真的全考数学了&#x2F;kk 死磕T1，结果自我感觉最难的就是T1了。。。 最后直接雪崩。。。  T1算法构造 题目 分析 我们先考虑弱化版：  Ans &#x3D; \sum^{n}_{i&#x3D;1} \sum^{n}_{j&#x3D;i+1} \sum^{n}_{k&#x3D;j+1} (A_i \bigoplus A_j) \times (A_j \bigoplus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T20200903赛后总结">
+<meta property="og:url" content="denerate.ink/articles/T20200903%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="DeNeRATe">
+<meta property="og:description" content="T20200903赛后总结成绩排行：T20200903成绩总结这次是真的全考数学了&#x2F;kk 死磕T1，结果自我感觉最难的就是T1了。。。 最后直接雪崩。。。  T1算法构造 题目 分析 我们先考虑弱化版：  Ans &#x3D; \sum^{n}_{i&#x3D;1} \sum^{n}_{j&#x3D;i+1} \sum^{n}_{k&#x3D;j+1} (A_i \bigoplus A_j) \times (A_j \bigoplus">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/09/03/AqSZ17Qp6j28UWe.gif">
+<meta property="og:image" content="https://i.loli.net/2020/09/03/VrWSsyaoKw95gX6.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/03/ocVUwvBbyXCkKgZ.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/03/decQ8gDUjRNKpi6.png">
+<meta property="article:published_time" content="2020-09-12T06:35:07.000Z">
+<meta property="article:modified_time" content="2020-09-12T06:36:06.302Z">
+<meta property="article:author" content="DeNeRATe">
+<meta property="article:tag" content="Summary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/03/AqSZ17Qp6j28UWe.gif">
+
+
+
+
+
+
+  <link rel="canonical" href="denerate.ink/articles/T20200903赛后总结/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>T20200903赛后总结 | DeNeRATe</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/DeNeRATe-cool" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DeNeRATe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Go Straight On My Way</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="denerate.ink/articles/T20200903%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DeNeRATe"/>
+      <meta itemprop="description" content="Life is hard to cut off, lifelong lovesickness"/>
+      <meta itemprop="image" content="/images/C.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DeNeRATe"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">T20200903赛后总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-09-12 14:35:07 / Modified: 14:36:06" itemprop="dateCreated datePublished" datetime="2020-09-12T14:35:07+08:00">2020-09-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/articles/T20200903%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/articles/T20200903%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">32k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">29 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="T20200903赛后总结"><a href="#T20200903赛后总结" class="headerlink" title="T20200903赛后总结"></a>T20200903赛后总结</h1><h2 id="成绩排行：T20200903成绩"><a href="#成绩排行：T20200903成绩" class="headerlink" title="成绩排行：T20200903成绩"></a>成绩排行：<a href="file:///C:/Users/12298/Desktop/Exam/2020.9.3/result20200903.html">T20200903成绩</a></h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次是真的全考<strong>数学</strong>了<strong>/kk</strong></p>
+<p><strong>死磕T1</strong>，结果自我感觉最难的就是T1了。。。</p>
+<p>最后直接<strong>雪崩</strong>。。。</p>
+<p><img src="https://i.loli.net/2020/09/03/AqSZ17Qp6j28UWe.gif" alt="T20200903-1.gif"></p>
+<h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p><strong>构造</strong></p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="https://i.loli.net/2020/09/03/VrWSsyaoKw95gX6.png" alt="T20200903-A.png"></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><hr>
+<p>我们先考虑<strong>弱化版</strong>：</p>
+<script type="math/tex; mode=display">
+Ans = \sum^{n}_{i=1} \sum^{n}_{j=i+1} \sum^{n}_{k=j+1} (A_i \bigoplus A_j) \times (A_j \bigoplus A_k)</script><p>发现，非常简单，<strong>化简一下</strong></p>
+<script type="math/tex; mode=display">
+Ans = \sum^{n}_{j=1} \sum^{j-1}_{i=1} \sum^{n}_{k=j+1} (A_i \bigoplus A_j) \times (A_j \bigoplus A_k) \\
+=\sum^{n}_{j=1} \left( \sum^{j-1}_{i=1} A_i \bigoplus A_j \right) \times \left( \sum^{n}_{k=j+1} A_j \bigoplus A_k \right)</script><p>我们令</p>
+<script type="math/tex; mode=display">
+L[j] = \sum^{j-1}_{i=1} A_i \bigoplus A_j \\
+R[j] = \sum^{n}_{k=j+1} A_j \bigoplus A_k</script><p>所以我们可以得到</p>
+<script type="math/tex; mode=display">
+Ans = \sum^{n}_{j=1} L[j] \times R[j]</script><p>我们进而化简</p>
+<p>设，$ Bit(i,j) $表示$i$的第$j$位是$ 1/0 $</p>
+<script type="math/tex; mode=display">
+L[j] = \sum^{30}_{k=0} 2^k \times \sum^{j-1}_{i=0} [Bit(A_j,k) \neq Bit(A_i,k)] \\
+R[j] = \sum^{30}_{k=0} 2^k \times \sum^{n}_{i=j+1} [Bit(A_j,k) \neq Bit(A_i,k)]</script><hr>
+<p>有了上边的<strong>基础</strong></p>
+<p>对于<strong>升级版</strong></p>
+<p>我们就可以<strong>轻松切了</strong></p>
+<p>（当时推到这儿了，结果还是没有维护出来。。。<strong>wtcl</strong>）</p>
+<script type="math/tex; mode=display">
+Ans = \sum_{i<j<k} (A_i \bigoplus A_j) \times (A_j \bigoplus A_k) \times (A_i \bigoplus A_k) \\
+= \sum_{i<j<k} (A_i \bigoplus A_j) \times (A_j \bigoplus A_k) \times \sum^{30}_{b=0} 2^b \times (Bit(A_i,b) \neq Bit(A_k,b)) \\
+= \sum^{30}_{b=0} 2^b \times \sum_{i<j<K} (A_i \bigoplus A_j) \times (A_j \bigoplus A_k) \times (Bit(A_i,b) \neq Bit(A_k,b))</script><p>所以，我们只需要枚举$ Bit(A_i,b) \neq Bit(A_k,b) $时的<strong>每一位</strong>即可统计答案</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><strong>吐槽一下：</strong>实现是真的<strong>闹心</strong>。。。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xor </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(LL i=A;i&lt;=B;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(LL i=A;i&gt;=B;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 998244353</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> LL MAXN=<span class="number">2e5</span>+<span class="number">10</span>,Limit=<span class="number">35</span>;</span><br><span class="line"></span><br><span class="line">LL Total,Num[MAXN],Ans;</span><br><span class="line">LL L[MAXN][<span class="number">2</span>],R[MAXN][<span class="number">2</span>];</span><br><span class="line">LL Suf[Limit][<span class="number">2</span>][<span class="number">2</span>],Pre[Limit][<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">LL Two[Limit]=&#123;<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">File</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">"xor.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"xor.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Solve</span><span class="params">(LL Temp)</span> </span>&#123;</span><br><span class="line">	Cl(Suf,<span class="number">0</span>);</span><br><span class="line">	FOR(i,<span class="number">1</span>,Total) &#123;</span><br><span class="line">		L[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">		L[i][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		FOR(j,<span class="number">0</span>,<span class="number">30</span>) &#123;</span><br><span class="line">			LL Loc=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;j))&gt;<span class="number">0</span>);</span><br><span class="line">			(L[i][<span class="number">0</span>]+=Suf[j][Loc ^ <span class="number">1</span>][<span class="number">0</span>])%=MOD;</span><br><span class="line">			(L[i][<span class="number">1</span>]+=Suf[j][Loc ^ <span class="number">1</span>][<span class="number">1</span>])%=MOD;</span><br><span class="line">		&#125;</span><br><span class="line">		LL Bit=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;Temp))&gt;<span class="number">0</span>);</span><br><span class="line">		FOR(j,<span class="number">0</span>,<span class="number">30</span>) &#123;</span><br><span class="line">			LL Loc=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;j))&gt;<span class="number">0</span>);</span><br><span class="line">			(Suf[j][Loc][Bit]+=Two[j])%=MOD;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	Cl(Pre,<span class="number">0</span>);</span><br><span class="line">	BOR(i,Total,<span class="number">1</span>) &#123;</span><br><span class="line">		R[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">		R[i][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		FOR(j,<span class="number">0</span>,<span class="number">30</span>) &#123;</span><br><span class="line">			LL Loc=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;j))&gt;<span class="number">0</span>);</span><br><span class="line">			(R[i][<span class="number">0</span>]+=Pre[j][Loc ^ <span class="number">1</span>][<span class="number">0</span>])%=MOD;</span><br><span class="line">			(R[i][<span class="number">1</span>]+=Pre[j][Loc ^ <span class="number">1</span>][<span class="number">1</span>])%=MOD;</span><br><span class="line">		&#125;</span><br><span class="line">		LL Bit=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;Temp))&gt;<span class="number">0</span>);</span><br><span class="line">		FOR(j,<span class="number">0</span>,<span class="number">30</span>) &#123;</span><br><span class="line">			LL Loc=((Num[i] &amp; (<span class="number">1</span>&lt;&lt;j))&gt;<span class="number">0</span>);</span><br><span class="line">			(Pre[j][Loc][Bit]+=Two[j])%=MOD;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	LL Res=<span class="number">0</span>;</span><br><span class="line">	FOR(i,<span class="number">1</span>,Total) &#123;</span><br><span class="line">		LL Val=(L[i][<span class="number">0</span>]*R[i][<span class="number">1</span>]+L[i][<span class="number">1</span>]*R[i][<span class="number">0</span>])%MOD;</span><br><span class="line">		(Res+=(Val*Two[Temp]))%=MOD;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Res%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">File</span>();</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;Total);</span><br><span class="line">	FOR(i,<span class="number">1</span>,<span class="number">30</span>) Two[i]=Two[i<span class="number">-1</span>]*<span class="number">2</span>%MOD;</span><br><span class="line">	FOR(i,<span class="number">1</span>,Total) <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;Num[i]);</span><br><span class="line">	FOR(Loc,<span class="number">0</span>,<span class="number">30</span>) (Ans+=Solve(Loc))%=MOD;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Ans%MOD);</span><br><span class="line">	fclose(<span class="built_in">stdin</span>);</span><br><span class="line">	fclose(<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><p><strong>动态规划+构造</strong></p>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p><img src="https://i.loli.net/2020/09/03/ocVUwvBbyXCkKgZ.png" alt="T20200903-B.png"></p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><hr>
+<p><strong>吐槽一下：</strong>由于我把题读错了？导致对着<strong>题解</strong>搞了好久</p>
+<hr>
+<p>我们如果直接枚举$n,k$状态，那么算重是一定的了</p>
+<p>所以，我们需要<strong>枚举每一个数选的个数</strong></p>
+<p>自然，我们就可以设计出状态<code>DP[i][j]</code>表示<strong>选了$i$个数，总和位$j$的集合数</strong></p>
+<p>所以我们可以先求出<code>DP[i][j]</code>，最后来枚举每一个数的个数即可</p>
+<p>但我们不能像通常一样枚举$i,j$，这样是$ O(n^3) $</p>
+<p>我们可以考虑两种<strong>转移方式</strong>：</p>
+<ul>
+<li>在当前集合状态下<strong>加一个1</strong></li>
+<li>将当前集合中的<strong>所有数加1</strong></li>
+</ul>
+<p>所以，我们的转移就是$ O(n^2) $了</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Lowbit(X) (X&amp;(-X))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Lson (X&lt;&lt;1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rson (X&lt;&lt;1|1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(LL i=A;i&lt;=B;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(LL i=A;i&gt;=B;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR_SIDE(i,A) for(LL i=Head[A];i;i=Next[i])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> LL MAXN=<span class="number">5e3</span>+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">LL DP[MAXN][MAXN],Ans;</span><br><span class="line">LL Total,Base,Limit;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">File</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    freopen(<span class="string">"set.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"set.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Fast</span><span class="params">(LL A,LL B)</span> </span>&#123;</span><br><span class="line">	LL Res=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(B) &#123;</span><br><span class="line">		<span class="keyword">if</span>(B &amp; <span class="number">1</span>) &#123; Res=(Res*A)%MOD; &#125;</span><br><span class="line">		A=(A*A)%MOD; B&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> Res%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">File</span>();</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;Total,&amp;Limit,&amp;Base);</span><br><span class="line">	DP[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	FOR(i,<span class="number">0</span>,Limit<span class="number">-1</span>) </span><br><span class="line">		FOR(j,<span class="number">0</span>,Total) &#123;</span><br><span class="line">			(DP[i+<span class="number">1</span>][j+<span class="number">1</span>]+=DP[i][j])%=MOD;</span><br><span class="line">			<span class="keyword">if</span>(i &amp;&amp; j+i&lt;=Total) (DP[i][j+i]+=DP[i][j])%=MOD;</span><br><span class="line">		&#125;</span><br><span class="line">	FOR(i,<span class="number">1</span>,Total) &#123;</span><br><span class="line">		LL Sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(LL j=<span class="number">1</span>;j&lt;=(Total/i) &amp;&amp; j&lt;=Limit;j++) </span><br><span class="line">			(Sum+=DP[Limit-j][Total-i*j])%=MOD;</span><br><span class="line">		(Ans+=Sum*Fast(i,Base))%=MOD;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Ans%MOD);</span><br><span class="line">    fclose(<span class="built_in">stdin</span>); fclose(<span class="built_in">stdout</span>);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><h3 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h3><p><strong>组合数学+构造</strong></p>
+<h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p><img src="https://i.loli.net/2020/09/03/decQ8gDUjRNKpi6.png" alt="T20200903-C.png"></p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>因为我们直接<strong>正面解决</strong>问题是很困难的</p>
+<p>所以我们考虑计算无法满足题目要求的集合的个数，即：</p>
+<ul>
+<li><strong>最大值不超过$k$</strong></li>
+<li><strong>所有数异或之和位0</strong></li>
+</ul>
+<hr>
+<h4 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h4><p><strong>从高到低</strong>考虑，<strong>一定存在</strong>一个$A_i$满足$ Bit(A_i,j) \neq Bit(k,j) $</p>
+<p>证明<strong>显然</strong>，<strong>故咕</strong></p>
+<p>因为$ \forall i \in [1,n],A_i \leq k $</p>
+<p>所以当存在时，<strong>当且仅当</strong>$A_i$的第$j$位为<strong>0</strong></p>
+<hr>
+<p>有了这个引理，这道题基本就可以<strong>宣告结束</strong>了</p>
+<p>对于剩下的$n-1$个数，他们的剩下$j-1$位可以<strong>乱填</strong>都是没有问题的</p>
+<p>所以我们来考虑$ Bit(A_i,j)==0 $，他的$ [0,j-1] $有$ 2^j $种情况</p>
+<p>对于$ Bit(A_i,j)==1 $，他的$ [0,j-1] $有$ k \,\,\, \&amp; \,\,\, (2^j-1)+1 $</p>
+<p>所以，我们可以<strong>枚举</strong>满足$ Bit(A_i,j)==0 $的数的个数</p>
+<p><strong>方案数</strong>为：</p>
+<script type="math/tex; mode=display">
+{n \choose v} \times (2^j)^{v-1} \times (k \,\,\, \& \,\,\, (2^j-1)+1)^{n-v}</script><p>我们必须要保证$v$和$n$的<strong>奇偶性相同</strong>，才能使得最后异或和为0</p>
+<p>进而，我们可以通过<strong>二项式定理</strong>来化简</p>
+<p>对于$n$为<strong>偶数</strong>的情况（<strong>奇数</strong>很简单的啦）</p>
+<script type="math/tex; mode=display">
+Ans = (2^{-j-1}) \times \sum^{n}_{n=2} {n \choose v} \times (2^j)^v \times (k \,\,\, \& \,\,\, (2^j-1)+1)^{n-v} \times ((-1)^v + 1^v)</script><p>所以</p>
+<script type="math/tex; mode=display">
+(2^{-j-1}) \times \sum^{n}_{v=2} {n \choose v} \times (2^j)^v \times (k \,\,\, \& \,\,\, (2^j-1)+1)^{n-v} \times (-1)^v \\
+\Rightarrow (2^{-j-1}) \times ((k \,\,\, \& \,\,\, (2^j-1)+1-2^j)^n - (k \,\,\, \& \,\,\, (2^j-1)+1)^n) \\
+(2^{-j-1}) \times \sum^{n}_{v=2} {n \choose v} \times (2^j)^v \times (k \,\,\, \& \,\,\, (2^j-1)+1)^{n-v} \times 1^v \\
+\Rightarrow (2^{-j-1}) \times ((k \,\,\, \& \,\,\, (2^j-1)+1+2^j)^n - (k \,\,\, \& \,\,\, (2^j-1)+1)^n)</script><p><strong>时间复杂度：$ O(log^2n) $</strong></p>
+<p><strong>期望得分：100分</strong></p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xor2 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 998244353</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,A,B) for(LL i=A;i&lt;=B;i++) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BOR(i,A,B) for(LL i=A;i&gt;=B;i--) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cl(X,Y) memset((X),(Y),sizeof(X))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">LL Total,Ans,Limit,Temp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">File</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">"xor2.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"xor2.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Fast</span><span class="params">(LL A,LL B)</span> </span>&#123;</span><br><span class="line">	LL Res=<span class="number">1</span>;</span><br><span class="line">	A=((A%MOD+MOD)%MOD);</span><br><span class="line">	<span class="keyword">while</span>(B) &#123;</span><br><span class="line">		<span class="keyword">if</span>(B &amp; <span class="number">1</span>) Res=(Res*A)%MOD;</span><br><span class="line">		A=(A*A)%MOD; B&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> Res%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">File</span>();</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;Total,&amp;Limit);</span><br><span class="line">	<span class="keyword">if</span>(!(Total%<span class="number">2</span>)) Temp++;</span><br><span class="line">	BOR(i,<span class="number">29</span>,<span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span>(Limit &amp; (<span class="number">1</span>&lt;&lt;i)) &#123;</span><br><span class="line">			LL Last=(Limit &amp; ((<span class="number">1</span>&lt;&lt;i)<span class="number">-1</span>))+<span class="number">1</span>;</span><br><span class="line">			LL Val=(<span class="number">1</span>&lt;&lt;i);</span><br><span class="line">			<span class="keyword">if</span>(Total%<span class="number">2</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				Ans=Fast(Last+Val,Total)%MOD;</span><br><span class="line">				(Ans+=Fast(Last-Val,Total))%=MOD;</span><br><span class="line">				(Ans*=((MOD+<span class="number">1</span>)/<span class="number">2</span>))%=MOD;</span><br><span class="line">				Ans=((Ans-Fast(Last,Total))%MOD+MOD)%MOD;</span><br><span class="line">				(Temp+=(Ans*Fast(Val,MOD<span class="number">-2</span>)))%=MOD;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				Ans=Fast(Last+Val,Total)%MOD;</span><br><span class="line">				Ans=((Ans-Fast(Last-Val,Total))%MOD+MOD)%MOD;</span><br><span class="line">				(Ans*=((MOD+<span class="number">1</span>)/<span class="number">2</span>))%=MOD;</span><br><span class="line">				(Temp+=Ans*Fast(Val,MOD<span class="number">-2</span>)%MOD)%=MOD;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(Total &amp; <span class="number">1</span>)<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((Fast(Limit+<span class="number">1</span>,Total)-Temp)%MOD+MOD)%MOD);</span><br><span class="line">	fclose(<span class="built_in">stdin</span>);</span><br><span class="line">	fclose(<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Summary/" rel="tag"># Summary</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/articles/T20200902%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" rel="next" title="T20200902赛后总结">
+                <i class="fa fa-chevron-left"></i> T20200902赛后总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/articles/T20200904%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" rel="prev" title="T20200904赛后总结">
+                T20200904赛后总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/C.png"
+                alt="DeNeRATe"/>
+            
+              <p class="site-author-name" itemprop="name">DeNeRATe</p>
+              <p class="site-description motion-element" itemprop="description">Life is hard to cut off, lifelong lovesickness</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1229836346@qq.com" title="E-Mail &amp;rarr; mailto:1229836346@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.luogu.com.cn/user/38171" title="Luogu &amp;rarr; https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;38171" rel="noopener" target="_blank"><i class="fa fa-fw fa-code"></i>Luogu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.weibo.com/6493404409/profile?topnav=1&wvr=6" title="Weibo &amp;rarr; https:&#x2F;&#x2F;www.weibo.com&#x2F;6493404409&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://alansblog.ink/" title="http:&#x2F;&#x2F;alansblog.ink&#x2F;" rel="noopener" target="_blank">AlanTuring</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://jklover.hs-blog.cf/" title="http:&#x2F;&#x2F;jklover.hs-blog.cf&#x2F;" rel="noopener" target="_blank">JKLover</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dcoitheshadow.github.io/" title="https:&#x2F;&#x2F;dcoitheshadow.github.io&#x2F;" rel="noopener" target="_blank">TheShadow</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xecades.xyz/" title="https:&#x2F;&#x2F;xecades.xyz&#x2F;" rel="noopener" target="_blank">Xecades</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://widsnoy.top/" title="https:&#x2F;&#x2F;widsnoy.top&#x2F;" rel="noopener" target="_blank">widsnoy</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#T20200903赛后总结"><span class="nav-number">1.</span> <span class="nav-text">T20200903赛后总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩排行：T20200903成绩"><span class="nav-number">1.1.</span> <span class="nav-text">成绩排行：T20200903成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T1"><span class="nav-number">1.3.</span> <span class="nav-text">T1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">1.3.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.3.2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">1.3.3.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2"><span class="nav-number">1.4.</span> <span class="nav-text">T2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析-1"><span class="nav-number">1.4.3.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T3"><span class="nav-number">1.5.</span> <span class="nav-text">T3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析-2"><span class="nav-number">1.5.3.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引理"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">引理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-2"><span class="nav-number">1.5.4.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DeNeRATe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">191k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">2:54</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color='255,51,51' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  <script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item) > -1;
+    });
+    new Valine({
+      el: '#comments' ,
+      verify: false,
+      notify: true,
+      appId: 'uXldDxmh5eK3mUatmlEkTUI5-gzGzoHsz',
+      appKey: 'WVg9f2AP47AOb3f2TP0n7pnD',
+      placeholder: 'Input Your Thought',
+      avatar: 'mm',
+      meta:guest,
+      pageSize: '10' || 10,
+      visitor: false
+    });
+  </script>
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
