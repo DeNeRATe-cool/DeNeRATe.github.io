@@ -364,7 +364,7 @@ k=rand()\%(Y-X+1)+X</script><p>  这样，就可以产生你想要的任何范�
   <entry>
     <title>Awesome TEST</title>
     <url>/articles/TEST/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Nothing Here</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>There isn’t anything that worth watching</strong></p>
 <p><strong>Just A Test</strong></p>
 ]]></content>
       <tags>
