@@ -1966,30 +1966,6 @@ c_k= \sum ^{n-1}_{j=0} a_j \cdot S(j,k) = \sum^{n-1}_{j=0} a_j \cdot [j=k] \cdot
       </tags>
   </entry>
   <entry>
-    <title>Data Maker</title>
-    <url>/articles/%E6%95%B0%E6%8D%AE%E5%88%B6%E9%80%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="数据制造"><a href="#数据制造" class="headerlink" title="数据制造"></a>数据制造</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>最近突然来了兴趣，出了一场比赛，有了一些心得吧，也学到了很多。</p>
-<p>所以这里来说一下<strong>批量制造数据</strong></p>
-<p><img src="https://i.loli.net/2020/07/13/ZUVmd4ew2figDxI.png" alt="数据制造-1.png"></p>
-<p>所以，其实原理简单的一批，<strong>困难的主要是如何设计好的data</strong>，这个真的是体验之后感悟颇深（<del>感觉出数据比写程序还难。。。</del>）</p>
-<h2 id="rand-和srand-产生随机数"><a href="#rand-和srand-产生随机数" class="headerlink" title="rand()和srand()产生随机数"></a>rand()和srand()产生随机数</h2><p><strong>rand()​</strong>函数可以用来产生随机数，但是这不是真正意义上的随机数，是一个<strong>伪随机数</strong>，是根据一个数，我们可以称它为种子，为基准以某个递推公式推算出来的一系数，当这系列数很大的时候，就符合正态公布，从而相当于产生了随机数，但这不是真正的随机数，当计算机正常开机后，这个种子的值是定了的，除非你破坏了系统，为了改变这个种子的值，C提供了 <strong>srand()​</strong>函数，它的原形是<strong>void srand( int a)​</strong><br>   初始化随机产生器既rand()函数的初始值，即使把种子的值改成a; 从这你可以看到通过sand()函数，我们是可以产生可以预见的随机序列,那我们如何才能产生不可预见的随机序列呢？我们可能常常需要这样的随机序列，是吧。利用<strong>srand((unsigned)time(NULL))​</strong>是一种方法，因为每一次运行程序的时间是不同的.</p>
-<p>$rand()$会返回一随机数值，范围在<strong>0至RAND_MAX​</strong> 间。返回0至RAND_MAX之间的随机数值，RAND_MAX定义在<strong>stdlib.h</strong>，(其值至少为32767)，运算的结果是一个不定的数，要看你定义的变量类型，int整形的话就是32767。 在调用此函数产生随机数前，必须先利用$srand()$设好随机数种子，如果未设随机数种子，$rand()$在调用时会自动设随机数种子为<strong>1</strong>。一般用for语句来设置种子的个数。</p>
-<p><strong>random（）产生随机数为0或1；</strong></p>
-<p><strong>random（n）产生随机数为0到n之间的一个随机数；</strong></p>
-<p><strong>rand（）产生0到32768之间的一个随机数。</strong></p>
-<h3 id="产生指定范围的随机数"><a href="#产生指定范围的随机数" class="headerlink" title="产生指定范围的随机数"></a>产生指定范围的随机数</h3><p>由于$rand$产生的随机数从0到$rand_max$，而$rand_max$是一个很大的数，那么如何产生从$X \rightarrow Y$的数呢？</p>
-<p>  从$X$到$Y$，有$Y-X+1$个数，所以要产生从$X$到$Y$的数，只需要这样写：</p>
-<script type="math/tex; mode=display">
-k=rand()\%(Y-X+1)+X</script><p>  这样，就可以产生你想要的任何范围内的随机数了。</p>
-<h3 id="32bits随机数"><a href="#32bits随机数" class="headerlink" title="32bits随机数"></a>32bits随机数</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//generate a random 32 bits integer number </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rand32</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((rand()&lt;&lt;<span class="number">16</span>)+(rand()&lt;&lt;<span class="number">1</span>)+rand()%<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有了32bits的随机数生成方法，就可以构造32bits范围内的随机整数区间了，方法和之前16bits的情况一样。</p>
-<h3 id="32bits范围内的随机整数区间"><a href="#32bits范围内的随机整数区间" class="headerlink" title="32bits范围内的随机整数区间"></a>32bits范围内的随机整数区间</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//generate a random 32bits integer number in [start,end)</span></span><br><span class="line"> <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">uniform_integer_32</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> base=rand32();</span><br><span class="line">    <span class="keyword">if</span>(base==RAND32_MAX)</span><br><span class="line">        <span class="keyword">return</span> uniform_integer_32(start,<span class="built_in">end</span>);</span><br><span class="line">    <span class="keyword">int</span> range=<span class="built_in">end</span>-start;</span><br><span class="line">    <span class="keyword">int</span> remainder=RAND32_MAX%range;</span><br><span class="line">    <span class="keyword">int</span> bucket=RAND32_MAX/range;</span><br><span class="line">    <span class="keyword">if</span>(base&lt;RAND32_MAX-remainder)</span><br><span class="line">        <span class="keyword">return</span> start+base/bucket;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> uniform_integer_32(start,<span class="built_in">end</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Tool</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>指针 &amp; 函数基础应用</title>
     <url>/articles/%E6%8C%87%E9%92%88-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="指针-amp-函数基础应用"><a href="#指针-amp-函数基础应用" class="headerlink" title="指针 &amp; 函数基础应用"></a>指针 &amp; 函数基础应用</h1><h3 id="By-DeNeRATe—2020-8-6"><a href="#By-DeNeRATe—2020-8-6" class="headerlink" title="By DeNeRATe—2020.8.6"></a>By DeNeRATe—2020.8.6</h3><p>为了更好地理解和应用指针，我们先来简介一下内存空间。</p>
@@ -2479,32 +2455,6 @@ p_i = \frac{ \lfloor \frac{n}{2^{i+1}} \rfloor max([n\,\,\,mod \,\,\, 2^{i+1}]-2
       </tags>
   </entry>
   <entry>
-    <title>递归求逆元</title>
-    <url>/articles/%E9%80%92%E5%BD%92%E6%B1%82%E9%80%86%E5%85%83/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="线性求逆元"><a href="#线性求逆元" class="headerlink" title="线性求逆元"></a>线性求逆元</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个内容只是作为一个补充,所以就<strong>简要</strong>记录一下</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>如果对于每个数都进行<strong>单次求解逆元</strong>$ O(nlog(mod)) $,当$n$<strong>非常大</strong>的时候,当然就不行了,所以此时需要进行$ O(n) $<strong>快速求解</strong></p>
-<h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><p>１.首先很显然由<strong>费马小定理</strong>知$ 1^{-1} \equiv 1 (mod\,\,\,p) $</p>
-<p>２.然后,设$ p=ki+j,j&lt;i,1&lt;i&lt;p $,再放到$ mod\,\,\,p $意义下就会得到:$ ki+j \equiv 0 (mod\,\,\,p) $</p>
-<p>３.两边<strong>同时乘</strong> $ i^{-1},j^{-1} $</p>
-<p>４.可得:</p>
-<script type="math/tex; mode=display">
-kj^{-1}+i^{-1} \equiv 0 (mod\,\,\,p) \\
-i^{-1} \equiv -kj^{-1} (mod\,\,\,p) \\
-i^{-1} \equiv -( \frac{p}{i}) (p\,\,\,mod\,\,\,i)^{-1}</script><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Inv[<span class="number">0</span>]=Inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">FOR(i,<span class="number">2</span>,Limit) Inv[i]=(MOD-MOD/i)*Inv[MOD%i]%MOD;</span><br></pre></td></tr></table></figure>
-<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><ul>
-<li><p>使用$ p- \frac{p}{i} $是为了<strong>防止出现负数</strong></p>
-</li>
-<li><p>根据线性求解逆元的方法的式子:$ i^{-1} \equiv -kj^{-1} (mod\,\,\,p) $ </p>
-<p>可以<strong>递归</strong>求解就$ j^{-1} $,直到$ j=1 $<strong>直接返回1</strong></p>
-<p>中间优化可以加入<strong>记忆化</strong>来避免多次递归导致重复,这样求解$ 1,2, \cdots,n $所有的数时间<strong>复杂度</strong>还是$ O(n) $</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>循环矩阵</title>
     <url>/articles/%E5%BE%AA%E7%8E%AF%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="循环矩阵"><a href="#循环矩阵" class="headerlink" title="循环矩阵"></a>循环矩阵</h1><h2 id="表达方式声明"><a href="#表达方式声明" class="headerlink" title="表达方式声明"></a>表达方式声明</h2><ul>
@@ -2923,6 +2873,30 @@ a_2 \times a_3 \times a_4 + a_2 \times a_4</script><p>因为$ \forall\,i \in [2,
 ]]></content>
       <tags>
         <tag>Summary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Maker</title>
+    <url>/articles/Data%20Maker/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Data-Maker"><a href="#Data-Maker" class="headerlink" title="Data Maker"></a>Data Maker</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>最近突然来了兴趣，出了一场比赛，有了一些心得吧，也学到了很多。</p>
+<p>所以这里来说一下<strong>批量制造数据</strong></p>
+<p><img src="https://i.loli.net/2020/07/13/ZUVmd4ew2figDxI.png" alt="数据制造-1.png"></p>
+<p>所以，其实原理简单的一批，<strong>困难的主要是如何设计好的data</strong>，这个真的是体验之后感悟颇深（<del>感觉出数据比写程序还难。。。</del>）</p>
+<h2 id="rand-和srand-产生随机数"><a href="#rand-和srand-产生随机数" class="headerlink" title="rand()和srand()产生随机数"></a>rand()和srand()产生随机数</h2><p><strong>rand()​</strong>函数可以用来产生随机数，但是这不是真正意义上的随机数，是一个<strong>伪随机数</strong>，是根据一个数，我们可以称它为种子，为基准以某个递推公式推算出来的一系数，当这系列数很大的时候，就符合正态公布，从而相当于产生了随机数，但这不是真正的随机数，当计算机正常开机后，这个种子的值是定了的，除非你破坏了系统，为了改变这个种子的值，C提供了 <strong>srand()​</strong>函数，它的原形是<strong>void srand( int a)​</strong><br>   初始化随机产生器既rand()函数的初始值，即使把种子的值改成a; 从这你可以看到通过sand()函数，我们是可以产生可以预见的随机序列,那我们如何才能产生不可预见的随机序列呢？我们可能常常需要这样的随机序列，是吧。利用<strong>srand((unsigned)time(NULL))​</strong>是一种方法，因为每一次运行程序的时间是不同的.</p>
+<p>$rand()$会返回一随机数值，范围在<strong>0至RAND_MAX​</strong> 间。返回0至RAND_MAX之间的随机数值，RAND_MAX定义在<strong>stdlib.h</strong>，(其值至少为32767)，运算的结果是一个不定的数，要看你定义的变量类型，int整形的话就是32767。 在调用此函数产生随机数前，必须先利用$srand()$设好随机数种子，如果未设随机数种子，$rand()$在调用时会自动设随机数种子为<strong>1</strong>。一般用for语句来设置种子的个数。</p>
+<p><strong>random（）产生随机数为0或1；</strong></p>
+<p><strong>random（n）产生随机数为0到n之间的一个随机数；</strong></p>
+<p><strong>rand（）产生0到32768之间的一个随机数。</strong></p>
+<h3 id="产生指定范围的随机数"><a href="#产生指定范围的随机数" class="headerlink" title="产生指定范围的随机数"></a>产生指定范围的随机数</h3><p>由于$rand$产生的随机数从0到$rand_max$，而$rand_max$是一个很大的数，那么如何产生从$X \rightarrow Y$的数呢？</p>
+<p>  从$X$到$Y$，有$Y-X+1$个数，所以要产生从$X$到$Y$的数，只需要这样写：</p>
+<script type="math/tex; mode=display">
+k=rand()\%(Y-X+1)+X</script><p>  这样，就可以产生你想要的任何范围内的随机数了。</p>
+<h3 id="32bits随机数"><a href="#32bits随机数" class="headerlink" title="32bits随机数"></a>32bits随机数</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//generate a random 32 bits integer number </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rand32</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((rand()&lt;&lt;<span class="number">16</span>)+(rand()&lt;&lt;<span class="number">1</span>)+rand()%<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有了32bits的随机数生成方法，就可以构造32bits范围内的随机整数区间了，方法和之前16bits的情况一样。</p>
+<h3 id="32bits范围内的随机整数区间"><a href="#32bits范围内的随机整数区间" class="headerlink" title="32bits范围内的随机整数区间"></a>32bits范围内的随机整数区间</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//generate a random 32bits integer number in [start,end)</span></span><br><span class="line"> <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">uniform_integer_32</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> base=rand32();</span><br><span class="line">    <span class="keyword">if</span>(base==RAND32_MAX)</span><br><span class="line">        <span class="keyword">return</span> uniform_integer_32(start,<span class="built_in">end</span>);</span><br><span class="line">    <span class="keyword">int</span> range=<span class="built_in">end</span>-start;</span><br><span class="line">    <span class="keyword">int</span> remainder=RAND32_MAX%range;</span><br><span class="line">    <span class="keyword">int</span> bucket=RAND32_MAX/range;</span><br><span class="line">    <span class="keyword">if</span>(base&lt;RAND32_MAX-remainder)</span><br><span class="line">        <span class="keyword">return</span> start+base/bucket;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> uniform_integer_32(start,<span class="built_in">end</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Tool</tag>
       </tags>
   </entry>
 </search>
