@@ -2887,7 +2887,11 @@ A+B=B+A</script><h2 id="前置知识"><a href="#前置知识" class="headerlink"
 <p>所以我们可以考虑将序列分为若干个<strong>以1为两侧的序列</strong></p>
 <p>所以这之间的数都满足$ a_i \geq 2 $</p>
 <script type="math/tex; mode=display">
-1 , a_2, a_3 , \cdots ,a_{n-1} , 1</script><p>对于$ a<em>2 $（$ a</em>{n-1} $）来说它和$ a<em>3 $ （$ a</em>{n-2} $）一定会有<strong>一起的贡献</strong></p>
+1 , a_2, a_3 , \cdots ,a_{n-1} , 1</script><p>对于</p>
+<script type="math/tex; mode=display">
+a_2 (a_{n-1})</script><p>来说它和 </p>
+<script type="math/tex; mode=display">
+a_3  (a_{n-2})</script><p>一定会有<strong>一起的贡献</strong></p>
 <p>所以我们考虑是先消除$ a_2 $还是$ a_3 $</p>
 <p><strong>若消除$ a_2 $</strong></p>
 <p>那么总费用为</p>
