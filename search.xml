@@ -2899,4 +2899,30 @@ k=rand()\%(Y-X+1)+X</script><p>  这样，就可以产生你想要的任何范�
         <tag>Tool</tag>
       </tags>
   </entry>
+  <entry>
+    <title>线性求逆元</title>
+    <url>/articles/%E7%BA%BF%E6%80%A7%E6%B1%82%E9%80%86%E5%85%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="线性求逆元"><a href="#线性求逆元" class="headerlink" title="线性求逆元"></a>线性求逆元</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个内容只是作为一个补充,所以就<strong>简要</strong>记录一下</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>如果对于每个数都进行<strong>单次求解逆元</strong>$ O(nlog(mod)) $,当$n$<strong>非常大</strong>的时候,当然就不行了,所以此时需要进行$ O(n) $<strong>快速求解</strong></p>
+<h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><p>１.首先很显然由<strong>费马小定理</strong>知$ 1^{-1} \equiv 1 (mod\,\,\,p) $</p>
+<p>２.然后,设$ p=ki+j,j&lt;i,1&lt;i&lt;p $,再放到$ mod\,\,\,p $意义下就会得到:$ ki+j \equiv 0 (mod\,\,\,p) $</p>
+<p>３.两边<strong>同时乘</strong> $ i^{-1},j^{-1} $</p>
+<p>４.可得:</p>
+<script type="math/tex; mode=display">
+kj^{-1}+i^{-1} \equiv 0 (mod\,\,\,p) \\
+i^{-1} \equiv -kj^{-1} (mod\,\,\,p) \\
+i^{-1} \equiv -( \frac{p}{i}) (p\,\,\,mod\,\,\,i)^{-1}</script><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Inv[<span class="number">0</span>]=Inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">FOR(i,<span class="number">2</span>,Limit) Inv[i]=(MOD-MOD/i)*Inv[MOD%i]%MOD;</span><br></pre></td></tr></table></figure>
+<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><ul>
+<li><p>使用$ p- \frac{p}{i} $是为了<strong>防止出现负数</strong></p>
+</li>
+<li><p>根据线性求解逆元的方法的式子:$ i^{-1} \equiv -kj^{-1} (mod\,\,\,p) $ </p>
+<p>可以<strong>递归</strong>求解就$ j^{-1} $,直到$ j=1 $<strong>直接返回1</strong></p>
+<p>中间优化可以加入<strong>记忆化</strong>来避免多次递归导致重复,这样求解$ 1,2, \cdots,n $所有的数时间<strong>复杂度</strong>还是$ O(n) $</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
 </search>
