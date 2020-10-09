@@ -478,14 +478,14 @@
   </url>
   
   <url>
-    <loc>denerate.ink/lib/bookmark/renovate.json</loc>
+    <loc>denerate.ink/lib/bookmark/package.json</loc>
     
     <lastmod>2020-06-14</lastmod>
     
   </url>
   
   <url>
-    <loc>denerate.ink/lib/bookmark/package.json</loc>
+    <loc>denerate.ink/lib/bookmark/renovate.json</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -501,13 +501,6 @@
 
   
   <url>
-    <loc>denerate.ink/tags/Algorithm/</loc>
-    <lastmod>2020-10-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>denerate.ink/tags/Tool/</loc>
     <lastmod>2020-10-09</lastmod>
     <changefreq>daily</changefreq>
@@ -516,6 +509,13 @@
   
   <url>
     <loc>denerate.ink/tags/ELSE/</loc>
+    <lastmod>2020-10-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>denerate.ink/tags/Algorithm/</loc>
     <lastmod>2020-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
