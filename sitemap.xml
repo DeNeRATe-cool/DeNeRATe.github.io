@@ -471,13 +471,6 @@
   </url>
   
   <url>
-    <loc>denerate.ink/lib/bookmark/package.json</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>denerate.ink/lib/bookmark/README.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -486,6 +479,13 @@
   
   <url>
     <loc>denerate.ink/lib/bookmark/renovate.json</loc>
+    
+    <lastmod>2020-06-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>denerate.ink/lib/bookmark/package.json</loc>
     
     <lastmod>2020-06-14</lastmod>
     
@@ -508,6 +508,13 @@
   </url>
   
   <url>
+    <loc>denerate.ink/tags/Algorithm/</loc>
+    <lastmod>2020-10-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>denerate.ink/tags/ELSE/</loc>
     <lastmod>2020-10-09</lastmod>
     <changefreq>daily</changefreq>
@@ -522,7 +529,7 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Algorithm/</loc>
+    <loc>denerate.ink/tags/Awesome-TEST/</loc>
     <lastmod>2020-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -530,13 +537,6 @@
   
   <url>
     <loc>denerate.ink/tags/Basic-concept/</loc>
-    <lastmod>2020-10-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>denerate.ink/tags/Awesome-TEST/</loc>
     <lastmod>2020-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
