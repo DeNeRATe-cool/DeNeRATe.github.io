@@ -841,7 +841,7 @@ C'_1，C'_2，\cdots ,C'_{k-1}</script><p>那么，我们对$S$就构造出了$k
 <h3 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h3><p>因为去掉最大匹配两端的顶点去掉以后，剩下的点肯定是独立集。我们再从每个匹配里面挑选出来一个点加入到独立集中，也是不会破坏原有独立集的独立性的。</p>
 ]]></content>
       <tags>
-        <tag>Basic concept</tag>
+        <tag>Basic Concept</tag>
       </tags>
   </entry>
   <entry>
@@ -975,7 +975,7 @@ z_1(z_2+z_3)=z_1z_2+z_1z_3</script><h4 id="几何意义-1"><a href="#几何意�
 <h4 id="几何意义-2"><a href="#几何意义-2" class="headerlink" title="几何意义"></a>几何意义</h4><p><img src="https://i.loli.net/2020/08/14/BTWUp3gPy4Svti2.png" alt="复数基操-4.png"></p>
 ]]></content>
       <tags>
-        <tag>Basic concept</tag>
+        <tag>Basic Concept</tag>
       </tags>
   </entry>
   <entry>
@@ -989,14 +989,16 @@ T(n)= \begin{cases} \Theta(n^{log_b a}) & f(n)=O(n^{log_b a- \epsilon}) \\
 <p>定义“初始状态”$S_0$：即<strong>未进行任何操作</strong>时的状态。在快排的例子中，“初始状态”就是整个数组</p>
 <p>假设存在<strong>从状态到数</strong>的函数$F$，且对于<strong>任何状态</strong>$S$，$F(S) \geq F(S_0)$ ，则有以下推论：</p>
 <p>设$ S_1,S_2, \cdots ,S_m $为从$S_0$开始连续做$m$次操作所得的状态序列，$c_i$为第$i$次操作的时间开销。</p>
-<p>记$ p<em>i=c_i+F(S_i)-F(S</em>{i-1}) $，则$m$次操作的<strong>总时间花销</strong>为</p>
+<p>记</p>
+<script type="math/tex; mode=display">
+p_i=c_i+F(S_i)-F(S_{i-1})</script><p>则$m$次操作的<strong>总时间花销</strong>为</p>
 <script type="math/tex; mode=display">
 \sum^m_{i=1}p_i+F(S_0)-F(S_m)</script><p>又因为$ F(S) \geq F(S_0) $，所以有</p>
 <script type="math/tex; mode=display">
 \sum^m_{i=1}p_i \geq \sum^m_{i=1}c_i</script><p>因此，若$ p_i=O(T(n)) $，则$ O(T(n)) $时<strong>均摊复杂度的一个上界</strong></p>
 ]]></content>
       <tags>
-        <tag>Basic concept</tag>
+        <tag>Basic Concept</tag>
       </tags>
   </entry>
   <entry>
@@ -1454,7 +1456,7 @@ SG(x)=mex \lbrace SG(y_1),SG(y_2), \cdots ,SG(y_k) \rbrace</script><p>而对于�
 <h3 id="性质二"><a href="#性质二" class="headerlink" title="性质二"></a>性质二</h3><p>三点之间的最短路=Dep[u]+Dep[v]+Dep[w]-Dep[a]-Dep[b]-Dep[c];</p>
 ]]></content>
       <tags>
-        <tag>Basic concept</tag>
+        <tag>Basic Concept</tag>
       </tags>
   </entry>
   <entry>
@@ -1634,7 +1636,7 @@ k_1 \cdot \alpha_1 + k_2 \cdot \alpha_2 + \cdots + k_m \cdot \alpha_m = 0</scrip
 <p><strong>[同济大学数学系．工程数学线性代数：高等教育出版社，2014]</strong></p>
 ]]></content>
       <tags>
-        <tag>Basic concept</tag>
+        <tag>Basic Concept</tag>
       </tags>
   </entry>
   <entry>
