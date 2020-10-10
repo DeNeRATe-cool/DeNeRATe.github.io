@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>denerate.ink/tags/index.html</loc>
+    
+    <lastmod>2020-10-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>denerate.ink/articles/%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3-%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3/</loc>
     
     <lastmod>2020-10-10</lastmod>
@@ -464,13 +471,6 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/index.html</loc>
-    
-    <lastmod>2020-06-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>denerate.ink/lib/bookmark/README.html</loc>
     
     <lastmod>2020-06-14</lastmod>
@@ -529,14 +529,14 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Awesome-TEST/</loc>
+    <loc>denerate.ink/tags/Basic-Concept/</loc>
     <lastmod>2020-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Courseware/</loc>
+    <loc>denerate.ink/tags/Awesome-TEST/</loc>
     <lastmod>2020-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -550,14 +550,14 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Essay/</loc>
+    <loc>denerate.ink/tags/Courseware/</loc>
     <lastmod>2020-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Basic-Concept/</loc>
+    <loc>denerate.ink/tags/Essay/</loc>
     <lastmod>2020-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
