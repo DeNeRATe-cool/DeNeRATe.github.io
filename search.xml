@@ -2067,4 +2067,30 @@ T_3(n)=O(n)</script><p>解得:$ T_1(n)=T_2(n)=T_3(n)=O(n) $</p>
         <tag>Courseware</tag>
       </tags>
   </entry>
+  <entry>
+    <title>正睿18联测赛后总结</title>
+    <url>/articles/%E6%AD%A3%E7%9D%BF18%E8%81%94%E6%B5%8B%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="T20201012"><a href="#T20201012" class="headerlink" title="T20201012"></a>T20201012</h1><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写了4道题，挂了3道题</p>
+<p>没有在比赛快结束的时候复查</p>
+<p>还有就是，组合计数有时是可以用DP做的</p>
+<p>思想不要囿于小范围</p>
+<p>随时积累小trick很有必要</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p><strong>T1：动态规划+构造</strong></p>
+<p><strong>T2：倍增DP+多项式快速幂</strong></p>
+<p><strong>T3：子序列自动机+动态规划</strong></p>
+<p><strong>T4：组合数学+构造</strong></p>
+<h1 id="T20201013"><a href="#T20201013" class="headerlink" title="T20201013"></a>T20201013</h1><h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>题目以难度排序</p>
+<p>就在死磕T1</p>
+<p>还是思维量不够，已经离答案非常近了</p>
+<p>但不敢继续往下去思考</p>
+<p>这道题对题目转换要求比较高</p>
+<h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><p><strong>T1：图的建立+并查集</strong></p>
+<p><strong>T2：动态规划+构造</strong></p>
+<p><strong>T3：构造+贪心</strong></p>
+<p><strong>T4：斜率优化+动态规划</strong></p>
+]]></content>
+      <tags>
+        <tag>Summary</tag>
+      </tags>
+  </entry>
 </search>
