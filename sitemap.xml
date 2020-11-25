@@ -613,14 +613,14 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Algorithm/</loc>
+    <loc>denerate.ink/tags/ELSE/</loc>
     <lastmod>2020-11-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>denerate.ink/tags/ELSE/</loc>
+    <loc>denerate.ink/tags/Algorithm/</loc>
     <lastmod>2020-11-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -648,13 +648,6 @@
   </url>
   
   <url>
-    <loc>denerate.ink/tags/Contest/</loc>
-    <lastmod>2020-11-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>denerate.ink/tags/Courseware/</loc>
     <lastmod>2020-11-25</lastmod>
     <changefreq>daily</changefreq>
@@ -663,6 +656,13 @@
   
   <url>
     <loc>denerate.ink/tags/Personal-Program/</loc>
+    <lastmod>2020-11-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>denerate.ink/tags/Contest/</loc>
     <lastmod>2020-11-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
