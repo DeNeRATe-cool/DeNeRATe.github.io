@@ -2342,7 +2342,84 @@ T_3(n)=O(n)</script><p>解得:$ T_1(n)=T_2(n)=T_3(n)=O(n) $</p>
   <entry>
     <title>NOIp2020退役记</title>
     <url>/articles/NOIp2020%E9%80%80%E5%BD%B9%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="NOIp2020退役记"><a href="#NOIp2020退役记" class="headerlink" title="NOIp2020退役记"></a>NOIp2020退役记</h1><h2 id="——DeNeRATe"><a href="#——DeNeRATe" class="headerlink" title="——DeNeRATe"></a>——DeNeRATe</h2><h2 id="day-3"><a href="#day-3" class="headerlink" title="day -3"></a>day -3</h2><p>考了一套模拟题，感觉还不错，希望可以将状态保持下去吧</p>
+<h2 id="day-2"><a href="#day-2" class="headerlink" title="day -2"></a>day -2</h2><p>使劲打板子中（感觉啥板子都要考，懵ing）</p>
+<p>用namespace打板子，打到luogu显示“代码过长”（/jk</p>
+<h2 id="day-1"><a href="#day-1" class="headerlink" title="day -1"></a>day -1</h2><h3 id="morning"><a href="#morning" class="headerlink" title="morning"></a>morning</h3><p>今早似乎只有我在打板子？</p>
+<p>直接开冲的一定都是大佬吧，祝AK</p>
+<h3 id="afternoon"><a href="#afternoon" class="headerlink" title="afternoon"></a>afternoon</h3><p>早早地在校门外吃完午饭</p>
+<p>准备向火车站进发</p>
+<p>话说，今天是真的冷呀，整天戴着帽子，头发都压垮了（算了，干脆不取了</p>
+<p>火车站到的好早呀，坐在一排<del>抱团取暖</del>耍手机</p>
+<p>（耍了半个多小时，突然意识到我们要考试了，心里一激灵）</p>
+<p>快上车时买了瓶水，8块？！穷了穷了</p>
+<p>动车上，望着窗外忽而忽现的树影，一个月前，它们似乎还是繁枝嫩叶</p>
+<p>座位前边是位绵实的oier，也算是有缘分了，祝比赛顺利吧</p>
+<p>快下车了才意识到没有和大家拍张合影，可惜可惜了</p>
+<p>又到了一个月前那个熟悉的酒店，还是熟悉的人，但我似乎感觉到了些许陌生</p>
+<p><del>开了房之后，上分！</del>（就这么水了一下午）</p>
+<p>吐槽一下酒店的房间设计：</p>
+<p><img src="https://i.loli.net/2020/12/05/iy374EcmlfSQIPd.jpg" alt="IMG_1776_20201204-151116_.JPG"></p>
+<p>这是站在浴室内从客厅看到的情况（我直接/whl）</p>
+<h3 id="evening"><a href="#evening" class="headerlink" title="evening"></a>evening</h3><p>明天再聚餐吧</p>
+<p>早点洗漱，</p>
+<p>上床再复习一下数据结构和dp优化（似乎一个都没考）</p>
+<p>最后又水了一会儿群</p>
+<p>果然，oier们的团结在这个时候彰显得淋漓尽致</p>
+<p>11点之前睡了</p>
+<p>明天NOIp加油！！！</p>
+<h2 id="day-0"><a href="#day-0" class="headerlink" title="day 0"></a>day 0</h2><h3 id="before"><a href="#before" class="headerlink" title="before"></a>before</h3><p>醒得很早啊，5点过就醒了</p>
+<p>闭着眼睛养神，等定好的闹钟来托我起来</p>
+<p>6.50一起去享受“最后的早餐”</p>
+<p>到了考场，买了只🖊</p>
+<p>就安心地在楼下排好队</p>
+<p>环顾四周，全是巨佬（/fad）</p>
+<p>问题不大，稳住心态</p>
+<p>又进了那个熟悉的考场，但这次是有bear来</p>
+<p>本以为这次考号是以学校为第一关键字，姓氏字典序为第二关键字排的</p>
+<p><del>可以安排一手</del></p>
+<p>但发现，好像是前后排哈（/whl）</p>
+<p>听旁边两位巨佬聊天针不戳</p>
+<h3 id="during"><a href="#during" class="headerlink" title="during"></a>during</h3><p>考前15分钟，先取下了压缩包</p>
+<p><code>water - string - ball - walk</code></p>
+<p>完了，T2是字符串（来自字符串日常爆零选手的/fad）</p>
+<p>考前5分钟，发了解压码</p>
+<p><code>1xuan2shou3jia4you</code></p>
+<p><del>谢谢ccf</del></p>
+<p>考试开始了</p>
+<p>还是先读一下前两题，稳定心态</p>
+<p>读完T1，真就<code>topo</code>？怀疑有坑</p>
+<p>读完T2，第一想法<code>border groups</code>？算了，先凎T1去了</p>
+<p>30min later</p>
+<p>还好，大样例一遍过了，开题状态不错</p>
+<p>开始整T2</p>
+<p>发现不可能有关<code>border groups</code></p>
+<p>可能需要枚举一下$C$的长度再求$ AB ^ i $吧</p>
+<p>决定先想+做到10点吧</p>
+<p>1h later</p>
+<p>好吧似乎有思路了</p>
+<p>调和级数应该比较好写吧</p>
+<p>但只能拿84分$ O(n \log n) $的部分分</p>
+<p>完善思路到写完，居然到了11点</p>
+<p>整个人慌起来了</p>
+<p>一测样例，完了，今天就栽这儿了</p>
+<p>逐渐让自己稳定心态</p>
+<p>感觉还是调性价比比较高</p>
+<p>$ \cdots $</p>
+<h3 id="after"><a href="#after" class="headerlink" title="after"></a>after</h3><p>考试结束，感觉会有一万个ak的（垫底选手实锤了</p>
+<p>本校大佬似乎没有发挥好（<del>世上又多了一个没调出题的人</del></p>
+<p>不知怎得，这次出考场和一个月前心态截然不同</p>
+<p>也许是我已经释然了（雾</p>
+<p>听了听本校大佬的题目思路</p>
+<p>很有道理！</p>
+<p>立马回酒店收拾好东西</p>
+<p>就是最后的聚餐</p>
+<p>也算是一个完整的句号了</p>
+<h2 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h2><p><a href="https://denerate.ink/articles/OI-%E5%88%92%E8%BF%872%E5%B9%B4%E7%9A%84%E6%A2%A6%E4%B9%A1/#more">OI—划过2年的梦乡</a></p>
+]]></content>
+      <tags>
+        <tag>Essay</tag>
+      </tags>
   </entry>
   <entry>
     <title>OI--划过2年的梦乡</title>
