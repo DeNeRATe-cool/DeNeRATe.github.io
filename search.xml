@@ -2339,4 +2339,114 @@ T_3(n)=O(n)</script><p>解得:$ T_1(n)=T_2(n)=T_3(n)=O(n) $</p>
         <tag>Summary</tag>
       </tags>
   </entry>
+  <entry>
+    <title>NOIp2020退役记</title>
+    <url>/articles/NOIp2020%E9%80%80%E5%BD%B9%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>OI--划过2年的梦乡</title>
+    <url>/articles/OI-%E5%88%92%E8%BF%872%E5%B9%B4%E7%9A%84%E6%A2%A6%E4%B9%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="OI—划过2年的梦乡"><a href="#OI—划过2年的梦乡" class="headerlink" title="OI—划过2年的梦乡"></a>OI—划过2年的梦乡</h1><p><strong>凡事总有一个结尾，但我希望不是猝不及防</strong></p>
+<p><strong>我也不知道，这篇blog是不是oi生涯的终章</strong></p>
+<p><strong>oi绝不是由一个人的坚持</strong></p>
+<p><strong>梦开始时，是我们7个人，我不希望抛下任何一个</strong></p>
+<h2 id="career-experience"><a href="#career-experience" class="headerlink" title="career experience"></a>career experience</h2><h3 id="接触OI"><a href="#接触OI" class="headerlink" title="接触OI"></a>接触OI</h3><p>第一次接触OI是在初一下吧</p>
+<p>同学拉我去试试，也就抱着试一试的心态去学了</p>
+<p>刚去的第一天中午</p>
+<p>同学给我秀了一波自制的c++计算器，秀我一脸</p>
+<p>（我竟然可以和编程扯上关系啦！？）</p>
+<p>花了两天中午，把循环学完了</p>
+<p>过了open judge的两组题</p>
+<p>（感觉自己好腻害欸）</p>
+<h3 id="错解OI"><a href="#错解OI" class="headerlink" title="错解OI"></a>错解OI</h3><p>由于没有老师的指引</p>
+<p>我其实根本不知道OI在学啥</p>
+<p>到头来，一年里每天中午去机房</p>
+<p>要不是做做入门题，要不就是水</p>
+<p>买了一本c++ prime以为OI学的就是工程代码</p>
+<p>和同学摸索了一年，工程比算法学得多得多</p>
+<p>到最后初二下册，才知道居然由dfs，bfs这种神一般的东西</p>
+<h3 id="放弃OI"><a href="#放弃OI" class="headerlink" title="放弃OI"></a>放弃OI</h3><p>初二上册，考了NOIp2017普及组</p>
+<p>由于T2输出格式的问题，直接堕落到二等奖</p>
+<p>初二下册，曾老师的一次冷嘲热讽</p>
+<p>让质疑自己的心坚定了退竞的意愿</p>
+<p>当时就想，“我以后再也不会接触OI这东西了！”</p>
+<h3 id="另一条路"><a href="#另一条路" class="headerlink" title="另一条路"></a>另一条路</h3><p>初三开始，学校对数物化竞赛的重视程度提升了</p>
+<p>请来了谭校和温某，加上班上一些大佬的带动</p>
+<p>让我对竞赛热情高涨</p>
+<p>当时每周二晚上最后两节课是竞赛课</p>
+<p>我有幸能忝列物理竞赛班，感觉真的挺骄傲的</p>
+<p>每周就跟着班上的物理大佬们学高中物理，听温某讲玄学</p>
+<p>课后自己悟时，真的别有一番滋味</p>
+<p>（没错，是悟道之后的成就感）</p>
+<p>因此，我们也坚定了高中继续学物竞的信念</p>
+<h3 id="不知所措"><a href="#不知所措" class="headerlink" title="不知所措"></a>不知所措</h3><p>初三下册</p>
+<p>因为两次竞赛测试，考得不错</p>
+<p>勉强拿到了DC高中的双免奖学金</p>
+<p>加上后来的一些特殊原因</p>
+<p>我还是选择了在DC继续我的高中生活</p>
+<p>记得当时暑假夏令营第一次让选一下自己选报的竞赛时</p>
+<p>我毫不犹豫得选择了</p>
+<ul>
+<li>物理</li>
+<li>数学</li>
+</ul>
+<p>可突如其来得事总会突如其来得发生</p>
+<p>张老师找到了我</p>
+<p>希望我能够走信息竞赛</p>
+<p>因为以前有基础（但我当时是真的忘完了呀）</p>
+<p>并鼓励了我许多</p>
+<p>不知道是张老师口舌好，还是自己有信心</p>
+<p>加上当时夏令营物竞测试，我又正在状态</p>
+<p>便不知道做出什么决定了</p>
+<p>夏令营后几天，年纪把我们拉到小学术厅</p>
+<p>在3分钟之内决定自己的3个志愿</p>
+<p>我犹豫了很久，最终填上了可能决定我未来走向的几个字</p>
+<ul>
+<li>信息</li>
+<li>物理</li>
+<li>数学</li>
+</ul>
+<p>现在回想起来，当时真的是没有意识到自己有多勇</p>
+<p>竟然敢再次拾起一年多没有碰过的OI</p>
+<p>只想对当时的自己说：“你没有选错，这是你热爱的，你愿意付出的”</p>
+<h3 id="真心融入"><a href="#真心融入" class="headerlink" title="真心融入"></a>真心融入</h3><p>在学习算法的过程中，会上很多网站刷题</p>
+<p>这让我结实并融入了一个个oj圈子</p>
+<p>OI的学习方式是完全不同于其他事物的</p>
+<p>这种方式是逐渐摸索出来的产物——学长带学弟</p>
+<p>加上网络的交流</p>
+<p>让我有了和全国oier交流的机会</p>
+<p>在uoj，loj，luogu academic中<del>水群</del>交流学习</p>
+<p>真的是一件非常舒畅的事情</p>
+<p>不时复读一下，也不乏幽默</p>
+<p>oier们的cf——codeforces</p>
+<p>一个可以更加拓宽视野的地方</p>
+<p>让我知道什么是人外有人，天外有天</p>
+<p>“tourist被boboniu狙了”“dreamoon_love_AA上红黑了”$ \cdots $</p>
+<p>这些小爆料，让我感受到tourist似乎离我也不远</p>
+<p>是世界变小了吗？不！</p>
+<p>是oier们的交流没有校界，省界，国界</p>
+<p>在和选手们打比赛切磋上分时，带来的是归属感和成就感</p>
+<p>若果你们一个oier他愿意离开oi吗</p>
+<p>我想答案应该是：“不，我觉得那是一种归属。”</p>
+<h2 id="insights"><a href="#insights" class="headerlink" title="insights"></a>insights</h2><p>无论我之后会做出什么决定</p>
+<p>这一段经历注定会在生命中留下不可磨灭的痕迹</p>
+<h3 id="那些一起在机房冲的日子"><a href="#那些一起在机房冲的日子" class="headerlink" title="那些一起在机房冲的日子"></a>那些一起在机房冲的日子</h3><p><img src="https://i.loli.net/2020/12/05/JgI4ja6AoTkswqN.jpg" alt="IMG_1783_20201205-173900_.JPG"></p>
+<p><img src="https://i.loli.net/2020/12/05/i2V6p1flH8UmJhX.jpg" alt="IMG_1784_20201205-174006_.JPG"></p>
+<h3 id="oier们考前团结的样子"><a href="#oier们考前团结的样子" class="headerlink" title="oier们考前团结的样子"></a>oier们考前团结的样子</h3><p><img src="https://i.loli.net/2020/12/05/zdtckOJR4xSIQjA.png" alt="IMG_1785.PNG"></p>
+<p><img src="https://i.loli.net/2020/12/05/JYMQ1s57ByFANSi.png" alt="IMG_1787.PNG"></p>
+<h3 id="通过刷题打比赛赢得奖品时"><a href="#通过刷题打比赛赢得奖品时" class="headerlink" title="通过刷题打比赛赢得奖品时"></a>通过刷题打比赛赢得奖品时</h3><p><img src="https://i.loli.net/2020/12/05/xW2Cmkf9qlGPV8K.png" alt="_D_IBJ8__3UHNC7~_`5G_A2.png"></p>
+<p><img src="https://i.loli.net/2020/12/06/HBAULDrwGMFdEk3.png" alt="QQ图片20201206021244.png"></p>
+<h3 id="一起前往考场"><a href="#一起前往考场" class="headerlink" title="一起前往考场"></a>一起前往考场</h3><p><img src="https://i.loli.net/2020/12/05/gS1TRfeOu7JlidU.jpg" alt="IMG_1774_20201204-140906_.JPG"></p>
+<p><img src="https://i.loli.net/2020/12/05/YuG8kDdsiLPT3Jb.jpg" alt="IMG_1781_20201205-131529_.JPG"></p>
+<h3 id="在一起的最后一顿早饭和最后一次聚餐"><a href="#在一起的最后一顿早饭和最后一次聚餐" class="headerlink" title="在一起的最后一顿早饭和最后一次聚餐"></a>在一起的最后一顿早饭和最后一次聚餐</h3><p><img src="https://i.loli.net/2020/12/05/Sxm1ZPUK8AQzuFp.jpg" alt="IMG_1778_20201205-065702_.JPG"></p>
+<p><img src="https://i.loli.net/2020/12/05/wxSz6ApMgLZF2BO.jpg" alt="IMG_1782_20201205-140830_.JPG"></p>
+<p>总之，一场梦的结束，注定着下一场梦的开始</p>
+<p>无论一年后的我是否会后悔现在的选择</p>
+<p>都是我最想活出的我的模样！</p>
+]]></content>
+      <tags>
+        <tag>Essay</tag>
+      </tags>
+  </entry>
 </search>
